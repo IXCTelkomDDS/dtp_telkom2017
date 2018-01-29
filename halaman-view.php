@@ -1,6 +1,7 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
 <?php
+
   include "koneksi_db.php";
   include "header.php";
   include "pagination1.php";
@@ -32,15 +33,21 @@
 ?>
 
    <title>Halaman View</title>
-  
-<body class="body-3">
+
+<body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="images/logo-telkom.png" width="80.5"></a>
       <nav role="navigation" class="w-nav-menu">
 <a href="index.html" id="home" class="navlink w-nav-link">Home</a>
 <a href="#daftar-kajian" id="daftar-kajian" class="navlink w-nav-link">Daftar Kajian</a>
-<a href="halaman-upload.php" id="Doc. Submission" class="navlink w-nav-link">Doc. Submission</a>
-<a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
+<a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
+
+<!-- pop up login-->
+<!-- <button class="navlink w-nav-link" data-toggle="modal" data-target="#myModal2" onclick="showform(this);" style="background-color:#f90;">Lab.</button> -->
+
+<a href="halaman-login.php" id="doc.submission" class="navlink w-nav-link">Lab</a>
+
+<!-- <a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a> -->
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 </nav>
      <div class="w-nav-button">
@@ -67,6 +74,7 @@
                     }
                     ?>
                 </div>
+
                 <div class="col-lg-5 text-right">
                     <form method="post" action="halaman-view.php">
                         <div class="form-group input-group">
@@ -127,13 +135,9 @@
 					
 					<!-- displaying detail button -->
             
-            <!-- <td>
-                <div align="center"><a href="halaman-pic.php"><button class="btn btn-default">Details</button><a></div>
-            </td> -->
-            
             <td>
                 <!-- setting id upload and attaching on click listener -->
-                <div align="center"><button class="btn btn-default" data-toggle="modal" data-target="#myModal" id="<?php echo JENIS_LAB_UPLOAD;?>" onclick="showDetails(this);">Details</button></div>
+                <div align="center"><button class="btn btn-default" data-toggle="modal" data-target="#myModal" onclick="showDetails(this);">Details</button></div>
             </td>
 					    
 		<!-- displaying pop up that will show details -->
@@ -152,32 +156,37 @@
 					    
 				<div class="modal-body">
 				    <!-- display data in pop up -->
-				    <p>1. Nama : Fidar Adjie Laksono (Manager of BCN) </p>
+				    <p>1. Nama : Moch. Suhariyanto (Manager of IXC) </p>
+				    <p>No. Telp : 08122415799 </p>
+				    
+				    <br>
+				    
+				    <p>2. Nama : Fidar Adjie Laksono (Manager of BCN) </p>
 				    <p>No. Telp : 08122138272 </p>
 				    
 				    <br>
 				    
-				    <p>2. Nama : I Gede Astawa (Manager of BAN) </p>
+				    <p>3. Nama : I Gede Astawa (Manager of BAN) </p>
 				    <p>No. Telp : 082129974691 </p>
 				    
 				    <br>
 				    
-				    <p>3. Nama : David Gunawan (Manager of CNP) </p>
+				    <p>4. Nama : David Gunawan (Manager of CNP) </p>
 				    <p>No. Telp : 081312135693 </p>
 				    
 				    <br>
 				    
-				    <p>4. Nama : Mochammad Sovan (Manager of SOB) </p>
+				    <p>5. Nama : Mochammad Sovan (Manager of SOB) </p>
 				    <p>No. Telp : 082260000286 </p>
 				    
 				    <br>
 				    
-				    <p>5. Nama : Sri Ponco Kisworo (Manager of ISR) </p>
+				    <p>6. Nama : Sri Ponco Kisworo (Manager of ISR) </p>
 				    <p>No. Telp : 085220681676 </p>
 				    
 				    <br>
 				    
-				    <p>6. Nama : Hazim Ahmadi (Manager of FMC) </p>
+				    <p>7. Nama : Hazim Ahmadi (Manager of FMC) </p>
 				    <p>No. Telp : 08122355175 </p>
 				</div>
 				
@@ -213,34 +222,82 @@
     include "footer.php";
 ?>
 
+                    
+    <!-- modal pop up login -->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+		    
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                
+		                <div align="center"><h4 class="modal-title" id="myModalLabel2">Login for Responsible P.I.C</h4></div>
+		            </div>
+		            
+				    <!-- display data in pop up -->
+				    <div class="modal-body">
+				        
+				        <form action="acc_login.php">
+                			<div align="center" style="padding: 15px 20px;"><img src="images/login2.png" class="avatar" style="width:150px;"></div>
+                			<div align="center"><input required="" class="text-field w-input" type="text" name="username" placeholder="Enter Username" style="width:200px;"></div>
+                		    <div align="center"><input required="" class="text-field w-input" type="password" name="password" placeholder="Enter Password" style="width:200px;"></div>
+                			<div align="center" style="padding: 5px 10px;"><button type="submit" name="login_button" id="login_button" value="submit_login" class="btn btn-primary" style="width:100px;">Login</button></div>
+                			<div align="center" style="padding: 5px 10px;"><input type="checkbox"> Remember me
+                			&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                			<a href="#">Forgot Password?</a></div>
+                			<div align="center" style="padding: 5px 10px;"><a href="halaman-signup.php">Sign Up</a></div>
+                	    </form>
+                	    
+                	    <!-- <div align="center" style="padding: 10px 15px;"><button class="btn btn-default" data-toggle="modal" data-target="#myModal3" onclick="showform2(this);">Sign Up</button> -->
+                		</div>
+                	    
+                	</div>
 
-<!-- pop up -->
+				</div>
+			</div>
+		</div>
+<!-- end modal pop up login -->
+
+<!-- pop up details -->
 <script type="text/javascript">
     function showDetails(button) {
-        var JENIS_LAB_UPLOAD = button.id;
-        
-        //ajax call to get specific data
-        //$('#modal-body').modal();
         
         $.ajax({
-            /*type: "GET",
-            contentType: "application/json; charset=utf-8",
-            dataType: "json", */
-            
-            url: "select.php",
-            method: "GET",
-            data: {"JENIS_LAB_UPLOAD": JENIS_LAB_UPLOAD},
             success: function(response) {
-                //parsing the JSON string to javascript object
-                var data2 = JSON.parse(response);
-                //displaying in fields
-                /*$("#nama_pic").text(data2.nama_pic);
-                $("#email_pic").text(data2.email_pic);
-                $("#no_tel_pic").text(data2.no_tel_pic);
-                
-                //display name
-                $("#myModalLabel").text(data2.lab_pic);*/
             }
         });
     }
+        
+    function showform(button) {
+        
+        $.ajax({
+            success: function(response) {
+            }
+        });
+    }
+    
+    $(document).ready(function) {
+        $('#login_button').click(function) {
+            var username = $('#username').val();
+            var password = $('#password').val();
+            
+            if(username != '' && password != '') {
+                $.ajax({
+                    url:"acc_login.php",
+                    method:"POST",
+                    data:{username:username, password:password},
+                    success:function(data){
+                        if(data == 'No') {
+                            alert("Wrong Data");
+                        } else {
+                            $('#myModal2').hide();
+                            location.reload();
+                        }
+                    }
+                });
+            }
+        }
+    }
+
 </script>

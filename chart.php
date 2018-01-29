@@ -11,6 +11,7 @@
 <a id="home" href="index.html" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" id="about" class="navlink w-nav-link">Daftar Kajian</a>
 <a href="halaman-upload.php" id="Doc. Submission" class="navlink w-nav-link">Doc. Submission</a>
+<a href="halaman-prototype.php" id="prototype" class="navlink w-nav-link">Prototype</a>
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 </nav>
     </div>
@@ -57,7 +58,7 @@
         series:[
         <?php 
             include "koneksi_db.php";
-            $sql   = "SELECT JENIS_LAB_UPLOAD, count(JENIS_FILE_UPLOAD) AS total FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' GROUP BY JENIS_LAB_UPLOAD";
+            $sql   = "SELECT JENIS_LAB_UPLOAD, count(JENIS_FILE_UPLOAD) AS total FROM upload_dtp GROUP BY JENIS_LAB_UPLOAD";
             $query = mysqli_query($connect, $sql);
                 while($temp = mysqli_fetch_array($query))
                 {

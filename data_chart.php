@@ -3,7 +3,7 @@
  include "koneksi_db.php";
 
 	 // Data for IXC
-    $query = mysqli_query($connect,"SELECT count(*) as NUMBER FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' || JENIS_LAB_UPLOAD = 'IXC'");
+    $query = mysqli_query($connect,"SELECT count(*) as NUMBER FROM upload_dtp JENIS_LAB_UPLOAD = 'IXC'");
     //$rows1 = array();
     $rows1['name'] = 'IXC';
     while($tmp = mysqli_fetch_array($query)) {
@@ -27,7 +27,7 @@
     }
     
     // Data for CNP
-    $query = mysqli_query($connect,"SELECT count(*) as NUMBER FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' || JENIS_LAB_UPLOAD = 'CNP'");
+    $query = mysqli_query($connect,"SELECT count(*) as NUMBER FROM upload_dtp WHERE JENIS_LAB_UPLOAD = 'CNP'");
     //$rows4 = array();
     $rows4['name'] = 'CNP';
     while($tmp = mysqli_fetch_array($query)) {

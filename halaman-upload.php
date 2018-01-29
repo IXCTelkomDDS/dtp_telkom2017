@@ -1,6 +1,9 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
 <?php
+    
+    session_start();
+
   include "koneksi_db.php";
   include "header.php";
   
@@ -46,39 +49,16 @@
         			}
      			});
      		});
-     		
-     		/*$(document).ready(function(){
-    		$("#upload").css("display","none"); //Menghilangkan tombol upload ketika pertama kali dijalankan
-        		$(".detail2").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Kajian Private" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
-            			$("#upload3").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
-        			} else {
-            			$("#upload3").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
-        			}
-     			});
-     		});
-     		
-     		$(document).ready(function(){
-    		$("#upload").css("display","none"); //Menghilangkan tombol upload ketika pertama kali dijalankan
-        		$(".detail3").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Dokumen Standar Private" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
-            			$("#upload4").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
-        			} else {
-            			$("#upload4").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
-        			}
-     			});
-     		});*/
-     		
+
 			<!-- end js tombol Upload -->
 			
 		</script>
-
 		
 	<title>Halaman Upload</title>
   
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
-    <div id="Home" class="section-12"><a href="index.html" class="brand w-nav-brand"><img src="images/logo-telkom.png" width="80.5"></a>
+    <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="images/logo-telkom.png" width="80.5"></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
 <a id="home" href="index.html" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" class="navlink w-nav-link">Daftar Kajian</a>
@@ -105,17 +85,9 @@
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Kajian" class="detail" required="">  Kajian &nbsp;
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar" class="detail" required=""> Dokumen Standar &nbsp;
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required=""> Prototype
-					<!-- <input type="radio" name="JENIS_FILE_UPLOAD" value="Kajian Private" class="detail2" required="">  Kajian Private &nbsp;
-					<input type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar Private" class="detail2" required=""> Dokumen Standar Private -->
 				</div>
 				
 				<br>
-				
-				<!-- <label for="Jenis-Kajian-2" class="field-label-2">Status Dokumen</label>
-				<div style="color:white">
-					<input type="radio" name="STATUS_FILE_UPLOAD" value="Private" class="detail2" required=""> Private &nbsp;
-					<input type="radio" name="STATUS_FILE_UPLOAD" value="Public" class="detail2" required=""> Public
-				</div> -->
 		
 				<label for="Lab" class="field-label-4">Lab</label>
 					<select name="JENIS_LAB_UPLOAD" required="" class="text-field w-select">
@@ -151,14 +123,6 @@
 			<div id="upload2" style="display:none" >
 				<input onclick="Warn2();" type="submit" value="Upload URL" name="Submit2" data-wait="Please wait..." class="button w-button">
 			</div>
-			
-			<!-- <div id="upload3" style="display:none" >
-				<input type="submit" value="Upload Dokumen" name="Submit3" data-wait="Please wait..." class="button w-button">
-			</div>
-			
-			<div id="upload4" style="display:none" >
-				<input type="submit" value="Upload Dokumen" name="Submit4" data-wait="Please wait..." class="button w-button">
-			</div> -->
 		
 			</form>
 			
@@ -177,16 +141,6 @@
  
  
         <script>
-
-            /*function Warn() {
-				var NAMA_FILE_UPLOAD=document.getElementById('File');
-					
-					if(NAMA_FILE_UPLOAD.value==''){
-						alert ("Please fill the File");
-						return false;
-					}
-						return true;
-            }*/
 			
 			function Warn2() {
                var URL=document.getElementById('url');
@@ -198,4 +152,4 @@
 						return true;
             }
 			
-      </script>
+        </script>
