@@ -82,7 +82,9 @@
 
 <a href="#prototype" id="prototype" class="navlink w-nav-link">Prototype</a>
 
-<a href="#End-Section" class="navlink w-nav-link">Customer care</a>
+<a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
+
+<a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 
 </nav>
 
