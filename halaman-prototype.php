@@ -82,8 +82,6 @@
 
 <a href="#prototype" id="prototype" class="navlink w-nav-link">Prototype</a>
 
-<a href="halaman-login.php" id="Doc. Submission" class="navlink w-nav-link">Doc. Submission</a>
-
 <a href="#End-Section" class="navlink w-nav-link">Customer care</a>
 
 </nav>
