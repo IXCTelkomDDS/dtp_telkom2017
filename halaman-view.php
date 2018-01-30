@@ -40,18 +40,6 @@
       <nav role="navigation" class="w-nav-menu">
 <a href="index.html" id="home" class="navlink w-nav-link">Home</a>
 <a href="#daftar-kajian" id="daftar-kajian" class="navlink w-nav-link">Daftar Kajian</a>
-
-    <?php
-        /*if($_SESSION['user_type']=='User P.I.C'){ ?>
-	       <a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
-    <?php } */ ?>
-
-
-
-<!-- pop up login-->
-<!-- <button class="navlink w-nav-link" data-toggle="modal" data-target="#myModal2" onclick="showform(this);" style="background-color:#f90;">Lab.</button> -->
-
-<a href="halaman-login.php" id="login" class="navlink w-nav-link">Login P.I.C</a>
 <a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 </nav>
