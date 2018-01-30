@@ -28,7 +28,7 @@
 
       <nav role="navigation" class="w-nav-menu">
 
-<a href="index.html" id="home" class="navlink w-nav-link">Home</a>
+<a href="#" id="home" class="navlink w-nav-link">Home</a>
 
 <a href="#login" id="login" class="navlink w-nav-link">Login</a>
 
