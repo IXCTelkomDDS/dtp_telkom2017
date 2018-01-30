@@ -2,8 +2,8 @@
 	include "koneksi_db.php";
 	session_start();
 	
-	    $username = htmlspecialchars($_POST['username']);
-        $password = htmlspecialchars($_POST['password']);
+	    //$username = htmlspecialchars($_POST['username']);
+        //$password = htmlspecialchars($_POST['password']);
 	
 	if(isset($_POST['Submit'])) {
 	    $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
@@ -29,7 +29,7 @@
     	    $_SESSION["status"] = "Login";
     	    header('location: halaman-upload.php');
     	} else {
-    	    header('location: halaman-login.php');
+    	    header('location: login.php');
     	}
 	}
     	
