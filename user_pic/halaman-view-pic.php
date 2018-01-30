@@ -5,17 +5,18 @@
   include "koneksi_db.php";
   include "header.php";
   include "pagination1.php";
+  include "check_session.php";
 
 	//mengatur variabel reload dan sql
 	if(isset($_REQUEST['keyword']) && $_REQUEST['keyword']<>""){
 		//if search found
 		$keyword = $_REQUEST['keyword'];
-		$reload = "halaman-view.php?pagination=true&keyword=$keyword";
+		$reload = "halaman-view-pic.php?pagination=true&keyword=$keyword";
 		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' AND JENIS_FILE_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' || JUDUL_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	} else {
 		//if search not found
-		$reload = "halaman-view.php?pagination=true";
+		$reload = "halaman-view-pic.php?pagination=true";
 		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	}
@@ -40,18 +41,12 @@
       <nav role="navigation" class="w-nav-menu">
 <a href="index.html" id="home" class="navlink w-nav-link">Home</a>
 <a href="#daftar-kajian" id="daftar-kajian" class="navlink w-nav-link">Daftar Kajian</a>
-
-    <?php
-        /*if($_SESSION['user_type']=='User P.I.C'){ ?>
-	       <a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
-    <?php } */ ?>
-
-
+<a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
 
 <!-- pop up login-->
 <!-- <button class="navlink w-nav-link" data-toggle="modal" data-target="#myModal2" onclick="showform(this);" style="background-color:#f90;">Lab.</button> -->
 
-<a href="halaman-login.php" id="login" class="navlink w-nav-link">Login P.I.C</a>
+<!-- <a href="halaman-login.php" id="login" class="navlink w-nav-link">Login P.I.C</a> -->
 <a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 </nav>
@@ -75,14 +70,14 @@
                     <?php
 						if($_REQUEST['keyword']<>""){
                     ?>
-                        <a class="btn btn-default btn-outline" href="halaman-view.php">Reset Search</a>
+                        <a class="btn btn-default btn-outline" href="halaman-view-pic.php">Reset Search</a>
                     <?php
                     }
                     ?>
                 </div>
 
                 <div class="col-lg-5 text-right">
-                    <form method="post" action="halaman-view.php">
+                    <form method="post" action="halaman-view-pic.php">
                         <div class="form-group input-group">
                             <input type="text" name="keyword" class="form-control" placeholder="Jenis Dokumen Or Lab" value="<?php echo $_REQUEST['keyword'];?>">
                             <span class="input-group-btn">
