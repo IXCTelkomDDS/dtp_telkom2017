@@ -30,9 +30,7 @@
 
 <a href="index.html" id="home" class="navlink w-nav-link">Home</a>
 
-<a href="halaman-view.php" id="daftar-kajian" class="navlink w-nav-link">Daftar Kajian</a>
-
-<a href="#login" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
+<a href="#login" id="login" class="navlink w-nav-link">Login</a>
 
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 
