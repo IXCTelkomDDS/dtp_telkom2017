@@ -8,7 +8,7 @@
   // if($connect) echo 'Connected'; //true
   //  else 'Not Connected Yet'; //false
 	
-	$sel_db = mysqli_select_db($connect,'digital_touch_points');
+	$sel_db = mysqli_select_db($connect,'digital_touch_point');
 
 	if ($connect) {
 		// echo "berhasil konek";
