@@ -4,12 +4,86 @@
     
     session_start();
 
-  include "koneksi_db.php";
-  include "header.php";
+  include "../header.php";
+  include "../koneksi_db.php";
   
+  if(isset($_POST['Submit'])) {
+		$allowed_ext	= array('pdf', ''); //untuk tipe file
+		$file_name		= $_FILES['NAMA_FILE_UPLOAD']['name'];
+		//$file_ext		= strtolower(end(explode('.', $file_name)));
+       	$file_ext		= pathinfo($_FILES['NAMA_FILE_UPLOAD']['name'],PATHINFO_EXTENSION);
+		//$file_size		= $_FILES['NAMA_FILE_UPLOAD']['size'];
+		$file_tmp		= $_FILES['NAMA_FILE_UPLOAD']['tmp_name'];
+		//$max_size	    = 5000000; //5 MB
+
+			$tgl_upload			= date("Y-m-d");
+			$judul				= $_POST['JUDUL_UPLOAD'];
+			$jenis_file			= $_POST['JENIS_FILE_UPLOAD'];
+			$jenis_lab			= $_POST['JENIS_LAB_UPLOAD'];
+			$deskripsi			= $_POST['DESKRIPSI_UPLOAD'];
+			$nama_file			= $_POST['NAMA_FILE_UPLOAD'];
+			$url    			= $_POST['URL'];
+
+			if(in_array($file_ext, $allowed_ext) === true){
+				//if($file_size < 1000000){
+					$nama_file = $file_name;
+						move_uploaded_file($file_tmp, 'uploads/'.$nama_file);
+
+						$sql = "INSERT INTO upload_dtp VALUES('', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+						$query = mysqli_query($connect,$sql);			
+
+						if($query) { ?>
+							<script>
+								alert('Add Successful');
+								location.href='halaman-view.php';
+							</script>
+						<?php } else { ?>
+							<script>
+								alert('Add Failed');
+								location.href='halaman-upload.php';
+							</script>
+						<?php } ?>
+		
+		<?php } ?>
+	<?php }
+
+	else if(isset($_POST['Submit2'])) {
+
+		$tgl_upload			= date("Y-m-d");
+		$judul				= $_POST['JUDUL_UPLOAD'];
+		$jenis_file			= $_POST['JENIS_FILE_UPLOAD'];
+		$jenis_lab			= $_POST['JENIS_LAB_UPLOAD'];
+		$deskripsi			= $_POST['DESKRIPSI_UPLOAD'];
+		$nama_file			= $_POST['NAMA_FILE_UPLOAD'];
+		$url    			= $_POST['URL'];
+
+			if($url != '') {
+				$sql2 = "INSERT INTO upload_dtp VALUES('', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+				$query2 = mysqli_query($connect,$sql2);
+
+						if($query2) { ?>
+						    <script>
+								alert('Add Successful');
+								location.href='halaman-prototype.php';
+							</script>
+						<?php } else { ?>
+						    <script>
+								alert('Add Failed');
+								location.href='halaman-upload.php';
+							</script>
+						<?php } ?>		
+
+			<?php } else { ?>
+			    <script>
+					alert('Add Failed');
+					location.href='halaman-upload.php';
+				</script>				
+
+			<?php } ?>
+
 ?>
 		
-		<script src="js/jquery.js"></script>
+		<script src="../js/jquery.js"></script>
 		<script>
 		
 		<!-- js field File -->
@@ -58,9 +132,9 @@
   
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
-    <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="images/logo-telkom.png" width="80.5"></a>
+    <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="../images/logo-telkom.png" width="80.5"></a>
       <nav role="navigation" class="nav-menu w-nav-menu">
-<a id="home" href="index.html" class="navlink w-nav-link">Home</a>
+<a id="home" href="index.php" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" class="navlink w-nav-link">Daftar Kajian</a>
 <a href="#Kajian" id="home" class="navlink w-nav-link">Doc. Submission</a>
 <a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
@@ -75,7 +149,7 @@
 	  
         <div class="form-block w-form">
           
-			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="act_upload_dtp.php" id="wf-form-Input-Form" name="form-upload" data-name="Input Form">
+			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="" id="wf-form-Input-Form" name="form-upload" data-name="Input Form">
 		  
 				<label for="Judul" class="field-label">Judul Kajian</label>
 					<input type="text" class="text-field w-input" maxlength="256" autofocus="true" name="JUDUL_UPLOAD" data-name="Judul" placeholder="Judul Kajian/Document Standard" id="Judul" required="">

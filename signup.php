@@ -2,74 +2,42 @@
 
 <?php
 
-  include "../koneksi.php";
-    session_start();    
+	session_start();
 
-    if(isset($_POST['Submit'])) {
-      $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
-      $result = mysqli_query($connect, $query);
-        $found = mysqli_num_rows($result);
-      
-      if($found == 1) {
-          $data = mysqli_fetch_array($result);
-          
-          if(!empty($_POST["remember"])) {
-              $_SESSION['islogin'] = TRUE;
-              $_SESSION['username'] = $data['username'];
-              $_SESSION['password'] = $data['password'];
-          }
-          
-          $_SESSION["status"] = "Login";
-          header('location: user_pic/index.php');
-      } else {
-          header('location: user/index.php');
-      }
-  }
+     include "../koneksi.php";
 
-    /*function antiinjection($data){
-    $filter_sql = mysqli_real_escape_string(stripslashes(strip_tags(htmlspecialchars($data,ENT_QUOTES))));
-      return $filter_sql;
-    }
+    if(isset($_POST['Submit2'])) {
+      $username     = $_POST['username'];
+      $password     = $_POST['password'];
+      //$MD5          = md5[$password]; //merubah variabel $ubah ke MD5
+      $lab_pic      = $_POST['lab_pic'];
+      //$user_type    = $_POST['User P I C'];
 
-    $username = antiinjection($_POST['username']);
-    $password = antiinjection($_POST['password']);
+        //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
+        $sql = "INSERT INTO user_pic VALUES ('', '$username', '$password', '$lab_pic', 'User P.I.C')";
+	    $query = mysqli_query($connect, $sql);
+  
+	      if($query) { ?>
+    	    <script>
+	          alert('Add Successful');
+	          location.href='index.php';
+	        </script>
 
-    if(isset($_POST['Submit'])) {
+    	  <?php } else { ?>
+	        <script>
+	          alert('Add Failed');
+	          location.href='signup.php';
+	        </script>
 
-        $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
-        $result  = mysqli_num_rows($query);
-        $row     = mysqli_fetch_array($query);
+      <?php } ?>    
 
-          // Apabila username dan password ditemukan
-          if ($result == 1) {
-
-            $_SESSION['islogin']     = true;
-            $_SESSION['user_type']   = $row['user_type'];
-            $_SESSION['username']    = $row['username'];
-            $_SESSION['password']    = $row['password'];
-      
-            if ($_SESSION[user_type] == "User P.I.C") {
-              header('location:user_pic/index.php');
-            } else {
-              header('location:user/index.php');
-            }
-
-          }
-    }*/
-
-    if(! isset($_SESSION['islogin'])){
-      echo 'Forbidden access !<br>';
-      echo '<a href="login.php">Please login first !</a>';
-      exit;
-   }
-
-?>
+  <?php } ?>
 
 <!DOCTYPE html>
 <html data-wf-page="59fd0c1ae534be0001f52c87" data-wf-site="59fd0c1ae534be0001f52c86">
 
 <head>
-  <title>Login User P.I.C</title>
+  <title>Sign Up User P.I.C</title>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,47 +74,43 @@
 
         <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
           <span class="login100-form-title-1">
-            Form Login Responsible of P.I.C
+            Form Sign Up Responsible of P.I.C
           </span>
         </div>
 
         <form class="login100-form validate-form" role="form" method="post" enctype="multipart/form-data" action="">
 
-          <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+          <div class="wrap-input100 validate-input m-b-26">
             <span class="label-input100">Username</span>
-            <input class="input100" type="text" name="username" placeholder="Enter username">
+            <input class="input100" type="text" name="username" placeholder="Enter Username" required="">
             <span class="focus-input100"></span>
           </div>
 
-          <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+          <div class="wrap-input100 validate-input m-b-18">
             <span class="label-input100">Password</span>
-            <input class="input100" type="password" name="password" placeholder="Enter password">
+            <input class="input100" type="password" name="password" placeholder="Enter Password" required="">
             <span class="focus-input100"></span>
           </div>
 
-          <div class="flex-sb-m w-full p-b-30">
-            <div class="contact100-form-checkbox">
-              <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-              <label class="label-checkbox100" for="ckb1">
-                Remember me
-              </label>
-            </div>
-
-            <div>
-              <a href="#" class="txt1">
-                Forgot Password?
-              </a>
-            </div>
-          </div>
+          <div class="wrap-select validate-input m-b-18">
+          	<span class="label-input100">Lab</span>
+				<select name="lab_pic" required="" class="text-field w-select">
+					<option value="">-- Pilih Lab --</option>
+					<option value="IXC">Lab IXC</option>
+					<option value="BAN">Lab BAN</option>
+					<option value="BCN">Lab BCN</option>
+					<option value="CNP">Lab CNP</option>
+					<option value="FMC">Lab FMC</option>
+					<option value="ISR">Lab ISR</option>
+					<option value="SOB">Lab SOB</option>
+				</select>
+			</span>
+		  </div>
 
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn" type="submit" value="Login" name="Submit">
-              Login
-            </button>
-            &nbsp; &nbsp;
-            <a href="signup.php"><button class="login100-form-btn" type="button" value="Sign Up" name="submit">
+            <button class="login100-form-btn" type="submit" value="Sign Up" name="Submit2">
               Sign Up
-            </button></a>
+            </button>
           </div>
 
         </form>
