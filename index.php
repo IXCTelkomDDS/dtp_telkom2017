@@ -3,6 +3,7 @@
 <?php
 
   include "../koneksi_db.php";
+    // session_start();    
 
     if(isset($_POST['Submit'])) {
       $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
@@ -10,7 +11,6 @@
         $found = mysqli_num_rows($result);
       
       if($found == 1) {
-          session_start();    
           $data = mysqli_fetch_array($result);
           
           if(!empty($_POST["remember"])) {
@@ -57,11 +57,11 @@
           }
     }*/
 
-    if(!isset($_SESSION['islogin'])){
+    /*if(!isset($_SESSION['islogin'])){
       echo 'Forbidden access !<br>';
       echo '<a href="index.php">Please login first !</a>';
       exit;
-   }
+   }*/
 
 ?>
 
