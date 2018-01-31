@@ -57,9 +57,9 @@
           }
     }*/
 
-    if(! isset($_SESSION['islogin'])){
+    if(!isset($_SESSION['islogin'])){
       echo 'Forbidden access !<br>';
-      echo '<a href="login.php">Please login first !</a>';
+      echo '<a href="index.php">Please login first !</a>';
       exit;
    }
 
