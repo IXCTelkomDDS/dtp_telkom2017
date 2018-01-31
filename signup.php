@@ -4,7 +4,7 @@
 
 	session_start();
 
-     include "../koneksi.php";
+     include "../koneksi_db.php";
 
     if(isset($_POST['Submit2'])) {
       $username     = $_POST['username'];
