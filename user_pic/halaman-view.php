@@ -5,7 +5,6 @@
   include "../koneksi_db.php";
   include "../header.php";
   include "../pagination1.php";
-  include "../check_session.php";
 
 	//mengatur variabel reload dan sql
 	if(isset($_REQUEST['keyword']) && $_REQUEST['keyword']<>""){

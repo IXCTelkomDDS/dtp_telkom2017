@@ -11,7 +11,7 @@
 		//if search found
 		$keyword = $_REQUEST['keyword'];
 		$reload = "halaman-view.php?pagination=true&keyword=$keyword";
-		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' AND JENIS_FILE_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' || JUDUL_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' AND JENIS_FILE_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	} else {
 		//if search not found
@@ -28,7 +28,7 @@
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="../images/logo-telkom.png" width="80.5"></a>
       <nav role="navigation" class="w-nav-menu">
-<a href="index.php" id="home" class="navlink w-nav-link">Home</a>
+<a href="../index.php" id="home" class="navlink w-nav-link">Home</a>
 <a href="#daftar-kajian" id="daftar-kajian" class="navlink w-nav-link">Daftar Kajian</a>
 <a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>

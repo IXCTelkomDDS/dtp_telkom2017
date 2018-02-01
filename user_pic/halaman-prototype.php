@@ -10,12 +10,12 @@
 		//if search found
 		$keyword = $_REQUEST['keyword'];
 		$reload = "halaman-prototype.php?pagination=true&keyword=$keyword";
-		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD='Prototype' || JUDUL_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' AND JENIS_LAB_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	} else {
 		//if search not found
 		$reload = "halaman-prototype.php?pagination=true";
-		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD='Prototype' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	}
 
@@ -80,7 +80,8 @@
                 </div>
             </div>       
 
-        <div class="table-responsive">         
+        <div class="table-responsive"> 
+
         <table class="table table-bordered">
 
     <tr>
