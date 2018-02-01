@@ -4,6 +4,7 @@
 
   include "../header.php";
   include "../pagination1.php";
+  include "../check_session.php";
 
   session_start();
   

@@ -3,6 +3,7 @@
 <?php
 
     include "../header.php";
+    include "../check_session.php";
 ?>
 
   <title>BAN Page</title>

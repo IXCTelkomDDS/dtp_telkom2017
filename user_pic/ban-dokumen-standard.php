@@ -4,6 +4,7 @@
   include "../koneksi_db.php";
   include "../header.php";
   include "../pagination1.php";
+  include "../check_session.php";
 
 		$reload = "ban-dokumen-standard.php?pagination=true";
 		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Dokumen Standar' AND JENIS_LAB_UPLOAD = 'BAN' ORDER BY id_upload ASC";

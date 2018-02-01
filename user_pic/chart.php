@@ -4,6 +4,7 @@
     
     include "../koneksi_db.php";
     include "../header.php";
+    include "../check_session.php";
 
 ?>
 

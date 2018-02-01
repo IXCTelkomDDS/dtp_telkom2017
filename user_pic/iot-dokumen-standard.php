@@ -4,6 +4,7 @@
   include "../koneksi_db.php";
   include "../header.php";
   include "../pagination1.php";
+  include "../check_session.php";
 
 		$reload = "iot-dokumen-standard.php?pagination=true";
 		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Dokumen Standar' AND JENIS_LAB_UPLOAD = 'ISR' ORDER BY ID_UPLOAD ASC";
