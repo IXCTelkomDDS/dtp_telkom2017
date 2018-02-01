@@ -1,10 +1,9 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
 <?php
-  //session_start();
 
   include "../header.php";
-  //include "../check_session.php";
+  include "../check_session.php";
 
 ?>
 
