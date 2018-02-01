@@ -12,7 +12,7 @@
       $result = mysqli_query($connect, $query);
       $found = mysqli_num_rows($result);
       
-      if($found > 0) {
+      if($found == 1) {
 
          session_start();
 
