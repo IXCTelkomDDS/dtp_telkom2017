@@ -109,10 +109,6 @@
             <button class="login100-form-btn" type="submit" value="Login" name="Submit">
               Login
             </button>
-            &nbsp; &nbsp;
-            <a href="signup.php"><button class="login100-form-btn" type="button" value="Sign Up" name="submit">
-              Sign Up
-            </button></a>
           </div>
 
         </form>
