@@ -1,8 +1,8 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
-
+ 
 <?php
 
-  include "koneksi_db.php";   
+  include "../koneksi_db.php";   
 
     if(isset($_POST['Submit'])) {
       $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
@@ -12,6 +12,7 @@
       if($found == 1) {
           $data = mysqli_fetch_array($result);
 
+              $_SESSION['islogin'] = true;
               $_SESSION['username'] = $data['username'];
               $_SESSION['password'] = $data['password'];
 
