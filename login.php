@@ -15,7 +15,7 @@
       if($found > 0) {
           $data = mysqli_fetch_array($result);
 
-              $_SESSION['islogin'] = true;
+              //$_SESSION['islogin'] = true;
               $_SESSION['username'] = $data['username'];
               $_SESSION['password'] = $data['password'];
 
