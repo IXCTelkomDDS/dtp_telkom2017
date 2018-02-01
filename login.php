@@ -2,10 +2,13 @@
  
 <?php
 
-  include "../koneksi_db.php";   
+  include "koneksi_db.php"; 
+
+  $username = $_POST['username'];
+  $password = $_POST['password'];  
 
     if(isset($_POST['Submit'])) {
-      $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '".$_POST['username']."' AND password = '".$_POST['password']."'";
+      $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '$username' AND password = '$password'";
       $result = mysqli_query($connect, $query);
       $found = mysqli_num_rows($result);
       
