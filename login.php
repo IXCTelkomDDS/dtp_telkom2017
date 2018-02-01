@@ -12,7 +12,7 @@
       $result = mysqli_query($connect, $query);
       $found = mysqli_num_rows($result);
       
-      if($found == 1) {
+      if($found > 0) {
           $data = mysqli_fetch_array($result);
 
               $_SESSION['islogin'] = true;
