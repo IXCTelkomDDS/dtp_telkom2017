@@ -2,8 +2,8 @@
    session_start();
 
      if(! isset($_SESSION['islogin'])){
-	    //echo 'Forbidden access !<br>';
-		header('location:login.php');
+	    echo 'Forbidden access !<br>';
+		echo '<a href="login.php">Please login first !</a>';
 		exit;
 	 }
 ?>
