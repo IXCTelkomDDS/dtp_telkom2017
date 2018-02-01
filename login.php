@@ -13,16 +13,20 @@
       $found = mysqli_num_rows($result);
       
       if($found > 0) {
+
+         session_start();
+
           $data = mysqli_fetch_array($result);
 
-              //$_SESSION['islogin'] = true;
               $_SESSION['username'] = $data['username'];
               $_SESSION['password'] = $data['password'];
 
+          if ($_SESSION['islogin'] = TRUE) {
           header('location: user_pic/index.php');
       } else {
           header('location: login.php');
       }
+    }
   }
 
 ?>
