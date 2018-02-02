@@ -21,7 +21,7 @@
               $_SESSION['username'] = $data['username'];
               $_SESSION['password'] = $data['password'];
 
-          if ($_SESSION['islogin'] = TRUE) {
+          if ($_SESSION['Login DTP'] = TRUE) {
           header('location: user_pic/index.php');
       } else {
           header('location: login.php');
@@ -106,7 +106,7 @@
           </div> -->
 
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn" type="submit" value="Login" name="Submit">
+            <button class="login100-form-btn" type="submit" value="Login DTP" name="Submit">
               Login
             </button>
             &nbsp; &nbsp;
