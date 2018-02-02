@@ -109,6 +109,12 @@
             <button class="login100-form-btn" type="submit" value="Login DTP" name="Submit">
               Login
             </button>
+            &nbsp;
+            <a href="signup.php">
+            <button class="login100-form-btn" type="button" value="Sign Up" name="Submit">
+              Sign Up
+            </button>
+            </a>
           </div>
 
         </form>
