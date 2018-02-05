@@ -4,6 +4,8 @@
 
   include "koneksi_db.php";
 
+    if(isset($_POST['Submit'])) {
+
     $allowed_ext  = array('pdf', ''); //untuk tipe file
     $file_name    = $_FILES['NAMA_FILE_UPLOAD']['name'];
     //$file_ext   = strtolower(end(explode('.', $file_name)));
@@ -18,16 +20,14 @@
       $jenis_lab      = $_POST['JENIS_LAB_UPLOAD'];
       $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
       $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
-      $url          = $_POST['URL'];
-
-      if(isset($_POST['Submit'])) {
+      //$url          = $_POST['URL'];
 
       if(in_array($file_ext, $allowed_ext) === true){
         //if($file_size < 1000000){
           $nama_file = $file_name;
             move_uploaded_file($file_tmp, 'uploads/'.$nama_file);
 
-            $sql = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+            $sql = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', 'null')";
             $query = mysqli_query($connect,$sql);     
 
             if($query) { ?>
@@ -52,11 +52,11 @@
     $jenis_file     = $_POST['JENIS_FILE_UPLOAD'];
     $jenis_lab      = $_POST['JENIS_LAB_UPLOAD'];
     $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
-    $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
+    //$nama_file      = $_POST['NAMA_FILE_UPLOAD'];
     $url          = $_POST['URL'];
 
       if($url != 'null') {
-        $sql2 = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+        $sql2 = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', 'null', '$url')";
         $query2 = mysqli_query($connect,$sql2);
 
             if($query2) { ?>
