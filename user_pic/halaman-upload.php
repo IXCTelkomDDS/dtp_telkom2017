@@ -3,7 +3,7 @@
 <?php
 
   include "../header.php";
-  include "../koneksi_db.php";
+  include "koneksi_db.php";
   include "../check_session.php";
 
 ?>
@@ -135,7 +135,7 @@
   </div>
  
  <?php
-	include "footer.php";
+	include "../footer.php";
  ?>
  
  
