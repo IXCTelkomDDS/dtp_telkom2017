@@ -5,7 +5,7 @@
   include "../header.php";
   include "../koneksi_db.php";
   include "../check_session.php";
-  include "../act_upload.php";
+  include "act_upload.php";
 
 ?>
 		
