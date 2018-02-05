@@ -4,7 +4,7 @@
 
      include "koneksi_db.php";
 
-    if(isset($_POST['Submit2'])) {
+    if(isset($_POST['SignUp'])) {
       $username     = $_POST['username'];
       $password     = $_POST['password'];
       //$MD5          = md5[$password]; //merubah variabel $ubah ke MD5
