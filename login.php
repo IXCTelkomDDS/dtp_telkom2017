@@ -7,7 +7,7 @@
   $username = $_POST['username'];
   $password = $_POST['password'];  
 
-    if(isset($_POST['Submit'])) {
+    if(isset($_POST['Login'])) {
       $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '$username' AND password = '$password'";
       $result = mysqli_query($connect, $query);
       $found = mysqli_num_rows($result);
@@ -106,12 +106,12 @@
           </div> -->
 
           <div class="container-login100-form-btn">
-            <button class="login100-form-btn" type="submit" value="Login DTP" name="Submit">
+            <button class="login100-form-btn" type="submit" value="Login DTP" name="Login">
               Login
             </button>
             &nbsp;
             <a href="signup.php">
-            <button class="login100-form-btn" type="button" value="Sign Up" name="Submit">
+            <button class="login100-form-btn" type="button" value="Sign Up" name="SignUp">
               Sign Up
             </button>
             </a>
