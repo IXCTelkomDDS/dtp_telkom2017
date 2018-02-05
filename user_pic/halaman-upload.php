@@ -5,7 +5,6 @@
   include "../header.php";
   include "../koneksi_db.php";
   include "../check_session.php";
-  include "act_upload.php";
 
 ?>
 		
@@ -75,7 +74,7 @@
 	  
         <div class="form-block w-form">
           
-			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="" id="wf-form-Input-Form" name="form-upload" data-name="Input Form">
+			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data" action="../act_upload.php" id="wf-form-Input-Form" name="form-upload" data-name="Input Form">
 		  
 				<label for="Judul" class="field-label">Judul Kajian</label>
 					<input type="text" class="text-field w-input" maxlength="256" autofocus="true" name="JUDUL_UPLOAD" data-name="Judul" placeholder="Judul Kajian/Document Standard" id="Judul" required="">
