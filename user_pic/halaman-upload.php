@@ -6,6 +6,8 @@
   include "../koneksi_db.php";
   include "../check_session.php";
 
+  if(isset($_POST['Submit'])) {
+
   $allowed_ext  = array('pdf', ''); //untuk tipe file
     $file_name    = $_FILES['NAMA_FILE_UPLOAD']['name'];
     //$file_ext   = strtolower(end(explode('.', $file_name)));
@@ -22,8 +24,6 @@
       $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
       $url          = $_POST['URL'];
 
-      if(isset($_POST['Submit'])) {
-
       if(in_array($file_ext, $allowed_ext) === true){
         //if($file_size < 1000000){
           $nama_file = $file_name;
@@ -35,12 +35,12 @@
             if($query) { ?>
               <script>
                 alert('Add Successful');
-                location.href='user_pic/halaman-view.php';
+                location.href='halaman-view.php';
               </script>
             <?php } else { ?>
               <script>
                 alert('Add Failed');
-                location.href='user_pic/halaman-upload.php';
+                location.href='halaman-upload.php';
               </script>
             <?php } ?>
     
