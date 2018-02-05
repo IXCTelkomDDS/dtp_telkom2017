@@ -33,12 +33,12 @@
             if($query) { ?>
               <script>
                 alert('Add Successful');
-                location.href='user_pic/halaman-view.php';
+                location.href='halaman-view.php';
               </script>
             <?php } else { ?>
               <script>
                 alert('Add Failed');
-                location.href='user_pic/halaman-upload.php';
+                location.href='halaman-upload.php';
               </script>
             <?php } ?>
     
