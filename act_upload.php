@@ -1,4 +1,4 @@
-
+<?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
 <?php
 
@@ -37,7 +37,7 @@ if(isset($_POST['Submit'])) {
             <?php } else { ?>
               <script>
                 alert('Add Failed');
-                location.href='act_upload.php';
+                location.href='user_pic/halaman-upload.php';
               </script>
             <?php } ?>
     
