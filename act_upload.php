@@ -27,7 +27,7 @@
           $nama_file = $file_name;
             move_uploaded_file($file_tmp, 'uploads/'.$nama_file);
 
-            $sql = "INSERT INTO upload_dtp VALUES('', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+            $sql = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
             $query = mysqli_query($connect,$sql);     
 
             if($query) { ?>
@@ -55,8 +55,8 @@
     $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
     $url          = $_POST['URL'];
 
-      if($url != '') {
-        $sql2 = "INSERT INTO upload_dtp VALUES('', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+      if($url != 'null') {
+        $sql2 = "INSERT INTO upload_dtp VALUES('null', '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
         $query2 = mysqli_query($connect,$sql2);
 
             if($query2) { ?>
