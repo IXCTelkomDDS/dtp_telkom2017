@@ -12,7 +12,7 @@
 
       if(isset($_POST['SignUp'])) {
         //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
-        $sql = "INSERT INTO user_pic VALUES ('', '$username', '$password', '$lab_pic', '$user_type')";
+        $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', '$user_type')";
         $query = mysqli_query($connect, $sql);
   
         if($query) { ?>
