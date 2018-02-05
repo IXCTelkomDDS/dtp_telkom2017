@@ -66,7 +66,7 @@ if(isset($_POST['Submit'])) {
             <?php } else { ?>
                 <script>
                 alert('Add Failed');
-                location.href='user_pic/halaman-upload.php';
+                location.href='act_upload.php';
               </script>
             <?php } ?>    
 
