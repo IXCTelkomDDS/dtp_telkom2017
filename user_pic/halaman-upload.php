@@ -1,4 +1,4 @@
-<?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
+
 
 <?php
 
