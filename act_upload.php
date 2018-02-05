@@ -6,10 +6,10 @@
 
     if(isset($_POST['Submit'])) {
 
-    $allowed_ext  = array('pdf', 'null'); //untuk tipe file
+    $allowed_ext  = array('pdf', ''); //untuk tipe file
     $file_name    = $_FILES['NAMA_FILE_UPLOAD']['name'];
-    //$file_ext   = strtolower(end(explode('.', $file_name)));
-        $file_ext   = pathinfo($_FILES['NAMA_FILE_UPLOAD']['name'],PATHINFO_EXTENSION);
+    $file_ext   = strtolower(end(explode('.', $file_name)));
+    //$file_ext   = pathinfo($_FILES['NAMA_FILE_UPLOAD']['name'],PATHINFO_EXTENSION);
     //$file_size    = $_FILES['NAMA_FILE_UPLOAD']['size'];
     $file_tmp   = $_FILES['NAMA_FILE_UPLOAD']['tmp_name'];
     //$max_size     = 5000000; //5 MB
