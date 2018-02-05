@@ -9,7 +9,7 @@
       $password     = $_POST['password'];
       //$MD5          = md5[$password]; //merubah variabel $ubah ke MD5
       $lab_pic      = $_POST['lab_pic'];
-      $user_type    = User PIC;
+      $user_type    = 'User PIC';
 
         //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
         $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', '$user_type')";
