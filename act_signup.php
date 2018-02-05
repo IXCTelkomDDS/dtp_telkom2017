@@ -12,7 +12,7 @@
       //$user_type    = $_POST['User P I C'];
 
         //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
-        $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', 'User P.I.C')";
+        $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', User P.I.C)";
 	      $query = mysqli_query($connect, $sql);
   
 	      if($query) { ?>
