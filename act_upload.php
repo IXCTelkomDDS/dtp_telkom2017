@@ -4,7 +4,6 @@
 
   include "koneksi_db.php";
 
-if(isset($_POST['Submit'])) {
     $allowed_ext  = array('pdf', ''); //untuk tipe file
     $file_name    = $_FILES['NAMA_FILE_UPLOAD']['name'];
     //$file_ext   = strtolower(end(explode('.', $file_name)));
@@ -20,6 +19,8 @@ if(isset($_POST['Submit'])) {
       $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
       $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
       $url          = $_POST['URL'];
+
+      if(isset($_POST['Submit'])) {
 
       if(in_array($file_ext, $allowed_ext) === true){
         //if($file_size < 1000000){
