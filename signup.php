@@ -12,14 +12,16 @@
 
       //script validasi data
  
-    $cek = "SELECT * FROM user_pic WHERE username = '$username' || password = '$password' || lab_pic = '$lab_pic'";
+    /*$cek = "SELECT * FROM user_pic WHERE username = '$username' || password = '$password' || lab_pic = '$lab_pic'";
     $cek2 = mysqli_query($connect, $cek);
     $cek3 = mysqli_num_rows($cek2);
     
     if ($cek3 > 1) {
         echo "<script>window.alert('Username atau Password atau Lab yang Anda masukan sudah ada')
           window.location='signup.php'</script>";
-    } else if(isset($_POST['SignUp'])) {
+    } else */
+
+    if(isset($_POST['SignUp'])) {
         //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
         $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', '$user_type')";
         $query = mysqli_query($connect, $sql);
