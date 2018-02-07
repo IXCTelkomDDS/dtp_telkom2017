@@ -5,14 +5,7 @@
   include "../header.php";
   include "../pagination1.php";
   include "../check_session.php";
-
-  session_start();
-  
-  $host = "localhost";
-  $username = "root";
-  $password = "";
-  $connect = mysqli_connect($host, $username, $password);
-  $sel_db = mysqli_select_db($connect,'digital_touch_point');
+  include "../koneksi_db.php";
 
 		$reload = "sob-kajian.php?pagination=true";
 		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Kajian' AND JENIS_LAB_UPLOAD = 'SOB' ORDER BY ID_UPLOAD ASC";
