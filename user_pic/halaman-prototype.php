@@ -36,7 +36,7 @@
 <body class="body-3">
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="../images/logo-telkom.png" width="80.5"></a>
-      <nav role="navigation" class="w-nav-menu">
+      <nav role="navigation" class="w-nav-menu" style="font-weight: bold">
 <a href="index.php" id="home" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" id="home" class="navlink w-nav-link">Daftar Kajian</a>
 <a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
@@ -107,7 +107,7 @@
   	  <td><div align="center"><?php echo $data['JENIS_FILE_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['JENIS_LAB_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['DESKRIPSI_UPLOAD'];?></div></td>
-  	  <td><div align="center"><?php echo '<a href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
+  	  <td><div align="center"><?php echo '<a href = "'.$data['URL'].''.target="_blank".'">'.$data['URL'].'<a>';?></td>
    </tr>
    
    <?php 

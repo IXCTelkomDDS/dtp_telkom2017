@@ -58,7 +58,7 @@
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-7 w-container"><a href="#" class="w-nav-brand"><img src="../images/logo-telkom.png" width="80.5"></a>
-      <nav role="navigation" class="nav-menu w-nav-menu">
+      <nav role="navigation" class="nav-menu w-nav-menu" style="font-weight: bold">
 <a id="home" href="index.php" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" class="navlink w-nav-link">Daftar Kajian</a>
 <a href="#Kajian" id="home" class="navlink w-nav-link">Doc. Submission</a>
