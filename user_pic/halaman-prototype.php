@@ -39,8 +39,8 @@
       <nav role="navigation" class="w-nav-menu">
 <a href="index.php" id="home" class="navlink w-nav-link">Home</a>
 <a href="halaman-view.php" id="home" class="navlink w-nav-link">Daftar Kajian</a>
+<a href="halaman-upload.php" id="doc.submission" class="navlink w-nav-link">Doc. Submission</a>
 <a href="#prototype" id="prototype" class="navlink w-nav-link">Prototype</a>
-<a href="chart.php" id="Lab Statistics" class="navlink w-nav-link">Lab Statistics</a>
 <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
 </nav>
          
