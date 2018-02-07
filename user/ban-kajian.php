@@ -7,7 +7,7 @@
 
 		$reload = "ban-kajian.php?pagination=true";
 		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Kajian' AND JENIS_LAB_UPLOAD = 'BAN' ORDER BY ID_UPLOAD ASC";
-		$result = mysqli_query($sql);
+		$result = mysqli_query($connect, $sql);
 		
 ?>
 
