@@ -105,7 +105,7 @@
   	  <td><div align="center"><?php echo $data['JENIS_FILE_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['JENIS_LAB_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['DESKRIPSI_UPLOAD'];?></div></td>
-  	  <td><div align="center"><?php echo '<a href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
+  	  <td><div align="center"><?php echo '<a target="_blank" class="link-4" href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
    </tr>
    
    <?php 
