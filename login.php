@@ -69,17 +69,13 @@
   
   <div class="limiter">
     <div class="container-login100" style="background-image: url(images/logo-login.jpg);">
-      <div class="wrap-login100">
 
-        <div class="login100-form-title" style="background-image: url(images/logo-login.jpg); margin-bottom: -50px; margin-top: -50px;">
-          <span class="login100-form-title-1" style="font-size: 25px;">
-            Selamat Datang Di Web Digital Touch Point IRS
-          </span>
-            <br>
+      <span style="font-size: 30px; color: white; margin-left: 20px; font-weight: bold">
+        <marquee align="center" scrollamount="10"> Selamat Datang Di Web Digital Touch Point IRS </marquee>
+      </span>
 
-          <span class="login100-form-title-1" style="font-size: 15px;">
-            Berikut merupakan statistik upload dokumen dari masing-masing lab :
-            <br>
+      <span style="font-size: 20px; color: white; margin-left: 30px; font-weight: bold">
+       Berikut merupakan statistik upload dokumen dari masing-masing lab :
             <br>
 
             <?php
@@ -96,20 +92,18 @@
         ?>
 
           <?php echo $count_lab; ?> :
-          <?php echo $total; ?>
+          <?php echo "<font color='yellow'> $total </font>" ?>
 
-          &nbsp;   
+          &nbsp;
 
         <?php 
-            }  
+          }  
         ?>      
 
           </span>
 
-        </div>
 
-         <div class="login100-form-title" style="background-image: url(images/white.jpg); margin-top: -70px; margin-bottom: -135px;">
-         </div>
+      <div class="wrap-login100">
 
       <div>
         <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
