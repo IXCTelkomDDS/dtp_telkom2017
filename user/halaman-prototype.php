@@ -10,19 +10,19 @@
 		//if search found
 		$keyword = $_REQUEST['keyword'];
 		$reload = "halaman-prototype.php?pagination=true&keyword=$keyword";
-		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD='Prototype' || JUDUL_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
-		$result = mysqli_query($connect, $sql);
+		$sql2 = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' AND JUDUL_UPLOAD LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' || URL LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
+		$result2 = mysqli_query($connect, $sql2);
 	} else {
 		//if search not found
 		$reload = "halaman-prototype.php?pagination=true";
-		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD='Prototype' ORDER BY ID_UPLOAD ASC";
-		$result = mysqli_query($connect, $sql);
+		$sql2 = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' ORDER BY ID_UPLOAD ASC";
+		$result2 = mysqli_query($connect, $sql2);
 	}
 
 	//pagination config start
 	  $rpp = 5; //jml record per halaman
 	  $page = isset($_GET["page"]) ? (intval($_GET["page"])) : 1;
-	  $tcount = mysqli_num_rows($result);
+	  $tcount = mysqli_num_rows($result2);
 	  $tpages = ($tcount) ? ceil($tcount/$rpp) : 1; //total page, last page number
 	  $count = 0;
 	  $i = ($page-1)*$rpp;
@@ -94,9 +94,10 @@
    </tr>
 
    <?php
+
 		while(($count<$rpp) && ($i<$tcount)){
-			mysqli_data_seek($result, $i);
-			$data = mysqli_fetch_array($result); //data di extract menggunakan "fetch array", kemudian ditampung di result menjadi data, setelah itu ditampilkan di tabel// ?>
+			mysqli_data_seek($result2, $i);
+			$data = mysqli_fetch_array($result2); //data di extract menggunakan "fetch array", kemudian ditampung di result menjadi data, setelah itu ditampilkan di tabel// ?>
    
    <tr>
       <td><div align="center"><?php echo ++$no_urut;?></div></td>
