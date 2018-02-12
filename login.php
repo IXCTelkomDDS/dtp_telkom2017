@@ -78,7 +78,7 @@
        Berikut merupakan statistik upload dokumen dari masing-masing lab :
             <br>
 
-            <?php
+        <?php
             $sql   = "SELECT JENIS_LAB_UPLOAD, count(JENIS_FILE_UPLOAD) AS total FROM upload_dtp GROUP BY JENIS_LAB_UPLOAD";
             $query = mysqli_query($connect, $sql);
                 while($temp = mysqli_fetch_array($query)) {
