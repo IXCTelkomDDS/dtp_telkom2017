@@ -11,7 +11,7 @@
 		//if search found
 		$keyword = $_REQUEST['keyword'];
 		$reload = "halaman-view.php?pagination=true&keyword=$keyword";
-		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' AND JENIS_FILE_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD FROM upload_dtp WHERE JENIS_FILE_UPLOAD != 'Prototype' AND JENIS_FILE_UPLOAD LIKE '%$keyword%' || JENIS_LAB_UPLOAD LIKE '%$keyword%' || JUDUL_UPLOAD LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' || NAMA_FILE_UPLOAD LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	} else {
 		//if search not found
