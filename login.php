@@ -100,6 +100,16 @@
           }  
         ?>      
 
+        <br>
+        <br>
+        Bagi P.I.C yang bertanggung jawab, harap segera melakukan
+        <br>
+        Sign Up untuk dapat melakukan upload dokumen.
+        <br>
+        Terima kasih :)
+        <br>
+        <br>
+
           </span>
 
 
