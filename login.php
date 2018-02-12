@@ -27,7 +27,8 @@
           header('location: login.php');
       }
     }
-  }
+  }  
+
 
 ?>
 
@@ -70,6 +71,47 @@
     <div class="container-login100" style="background-image: url(images/logo-login.jpg);">
       <div class="wrap-login100">
 
+        <div class="login100-form-title" style="background-image: url(images/logo-login.jpg); margin-bottom: -50px; margin-top: -50px;">
+          <span class="login100-form-title-1" style="font-size: 25px;">
+            Selamat Datang Di Web Digital Touch Point IRS
+          </span>
+            <br>
+
+          <span class="login100-form-title-1" style="font-size: 15px;">
+            Berikut merupakan statistik upload dokumen dari masing-masing lab :
+            <br>
+            <br>
+
+            <?php
+            $sql   = "SELECT JENIS_LAB_UPLOAD, count(JENIS_FILE_UPLOAD) AS total FROM upload_dtp GROUP BY JENIS_LAB_UPLOAD";
+            $query = mysqli_query($connect, $sql);
+                while($temp = mysqli_fetch_array($query)) {
+                    $count_lab=$temp['JENIS_LAB_UPLOAD'];   
+                    $sql_total = "SELECT JENIS_LAB_UPLOAD, count(*) AS total FROM upload_dtp WHERE JENIS_LAB_UPLOAD='$count_lab'";        
+                    $query_total = mysqli_query($connect, $sql_total);
+                        while($data = mysqli_fetch_array($query_total)) {
+                           $total = $data['total'];                 
+                        }             
+
+        ?>
+
+          <?php echo $count_lab; ?> :
+          <?php echo $total; ?>
+
+          &nbsp;   
+
+        <?php 
+            }  
+        ?>      
+
+          </span>
+
+        </div>
+
+         <div class="login100-form-title" style="background-image: url(images/white.jpg); margin-top: -70px; margin-bottom: -135px;">
+         </div>
+
+      <div>
         <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
           <span class="login100-form-title-1">
             Form Login Responsible of P.I.C
@@ -103,6 +145,7 @@
           </div>
 
         </form>
+
       </div>
     </div>
   </div>
