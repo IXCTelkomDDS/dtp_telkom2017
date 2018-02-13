@@ -63,31 +63,31 @@
 		        <div class="modal-content">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		                <h4 class="modal-title" id="myModalLabel">Details of Responsible P.I.C</h4>
+		                <h4 class="modal-title" id="myModalLabel">Details of Manager P.I.C</h4>
 		            </div>
 
 				<div class="modal-body">
 				    <!-- display data in pop up -->
-				    <p>1. Nama : Moch. Suhariyanto (Manager of IXC) </p>
-				    <p>No. Telp : 08122415799 </p>
+				    <p>1. Nama : I Gede Astawa (Manager of BAN) </p>
+				    <p>No. Telp : 082129974691 </p>
 				    <br>
 				    <p>2. Nama : Fidar Adjie Laksono (Manager of BCN) </p>
 				    <p>No. Telp : 08122138272 </p>
 				    <br>
-				    <p>3. Nama : I Gede Astawa (Manager of BAN) </p>
-				    <p>No. Telp : 082129974691 </p>
-				    <br>
-				    <p>4. Nama : David Gunawan (Manager of CNP) </p>
+				    <p>3. Nama : David Gunawan (Manager of CNP) </p>
 				    <p>No. Telp : 081312135693 </p>
 				    <br>
-				    <p>5. Nama : Mochammad Sovan (Manager of SOB) </p>
-				    <p>No. Telp : 082260000286 </p>
+				    <p>4. Nama : Hazim Ahmadi (Manager of FMC) </p>
+				    <p>No. Telp : 08122355175 </p>
 				    <br>
-				    <p>6. Nama : Sri Ponco Kisworo (Manager of ISR) </p>
+				    <p>5. Nama : Sri Ponco Kisworo (Manager of ISR) </p>
 				    <p>No. Telp : 085220681676 </p>
 				    <br>
-				    <p>7. Nama : Hazim Ahmadi (Manager of FMC) </p>
-				    <p>No. Telp : 08122355175 </p>
+				    <p>6. Nama : Moch. Suhariyanto (Manager of IXC) </p>
+				    <p>No. Telp : 08122415799 </p>
+				    <br>
+				    <p>7. Nama : Mochammad Sovan (Manager of SOB) </p>
+				    <p>No. Telp : 082260000286 </p>			    
 				</div>
 
 		       </div>
