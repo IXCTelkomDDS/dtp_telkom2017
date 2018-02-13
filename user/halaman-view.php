@@ -62,7 +62,7 @@
                 <div class="col-lg-5 text-right">
                     <form method="post" action="halaman-view.php">
                         <div class="form-group input-group">
-                            <input type="text" name="keyword" class="form-control" placeholder="Jenis Dokumen Or Lab" value="<?php echo $_REQUEST['keyword'];?>">
+                            <input type="text" name="keyword" class="form-control" placeholder="Search" value="<?php echo $_REQUEST['keyword'];?>">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" type="submit">Search</button>
                             </span>
