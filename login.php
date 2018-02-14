@@ -5,7 +5,7 @@
   include "koneksi_db.php"; 
 
   $username = $_POST['username'];
-  $password = $_POST['password'];  
+  $password = $_POST['password'];
 
     if(isset($_POST['Login'])) {
       $query = "SELECT * FROM user_pic WHERE user_type = 'User P.I.C' AND username = '$username' AND password = '$password'";
@@ -20,6 +20,7 @@
 
               $_SESSION['username'] = $data['username'];
               $_SESSION['password'] = $data['password'];
+              $_SESSION['lab_pic'] = $data['lab_pic'];
 
           if ($_SESSION['Login DTP'] = TRUE) {
           header('location: user_pic/index.php');
@@ -140,12 +141,12 @@
             <button class="login100-form-btn" type="submit" value="Login DTP" name="Login">
               Login
             </button>
-            &nbsp;
+            <!-- &nbsp;
             <a href="signup.php">
             <button class="login100-form-btn" type="button" value="Sign Up" name="SignUp">
               Sign Up
             </button>
-            </a>
+            </a> -->
           </div>
 
         </form>
