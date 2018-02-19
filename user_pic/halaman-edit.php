@@ -31,7 +31,7 @@ session_start();
   </div>
   <div id="Kajian" class="section-14">
     <div class="container-13 w-container">
-      <h2 class="heading-2 mobile upload">Upload Kajian &amp; Dokumen Standard</h2>
+      <h2 class="heading-2 mobile upload">Update Kajian &amp; Dokumen Standard</h2>
       <div class="div-block-12">
     
         <div class="form-block w-form">
@@ -72,7 +72,7 @@ session_start();
       <?php } ?>
       
         <label for="Desc" class="field-label-5">Deskripsi Dokumen</label>
-          <textarea rows="3" onkeypress ="return textonly(event)" class="text-field w-input" name="DESKRIPSI_UPLOAD" data-name="Deskripsi" placeholder="Deskripsi Tentang Kajian/Dokumen Standard Lab" id="Desc" required=""> <?php echo $data['DESKRIPSI_UPLOAD'];?></textarea>
+          <textarea rows="3" onkeypress ="return textonly(event)" class="text-field w-input" name="DESKRIPSI_UPLOAD" data-name="Deskripsi" placeholder="Deskripsi Tentang Kajian/Dokumen Standard Lab" id="Desc" required=""><?php echo $data['DESKRIPSI_UPLOAD'];?></textarea>
       
       <?php if ($data['JENIS_FILE_UPLOAD'] != 'Prototype') { ?>
 
@@ -80,10 +80,13 @@ session_start();
         $dir = "../uploads/"; // Directory where files are stored
           if ($dir_list = opendir($dir)) {
             while($file = readdir($dir_list)) {
-            } ?>
+            } 
 
-        <label for="File" class="field-label-5" >File (Jenis File harus pdf)</label>
-          <input type="file" name="NAMA_FILE_UPLOAD" class="form-control" data-name="File" id="File" value="<?php echo '<a href = " '.$dir.''.$data['NAMA_FILE_UPLOAD'].'">'.$data['NAMA_FILE_UPLOAD']. '<a>'?>">
+            ?>
+
+        <label for="File" class="field-label-5">File (Jenis File harus pdf)</label>
+          <div style="color: white"><input type="checkbox" name="ubah_file" value="true"> Ceklis jika ingin mengubah file dokumen <br></div>
+          <input type="file" name="NAMA_FILE_UPLOAD" class="form-control" data-name="File" id="File">
 
           <?php } ?>
       
