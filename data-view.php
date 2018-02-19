@@ -108,8 +108,8 @@ session_start();
 		<?php } ?>
 
 		<?php
-			//if($_SESSION['lab_pic'] != $data['JENIS_LAB_UPLOAD']) {
-			if($data['JENIS_LAB_UPLOAD'] == $_SESSION['lab_pic']) { ?>
+
+			if(($data['JENIS_LAB_UPLOAD'] == $_SESSION['lab_pic']) || ($_SESSION['username'] == 'admin')) { //jika lab pic = lab upload ?>
 
 	<td width="95px"><div align="center">
       	<a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
