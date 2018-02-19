@@ -101,7 +101,7 @@
           }  
         ?>      
 
-        <br>
+        <!-- <br>
         <br>
         Bagi P.I.C yang bertanggung jawab, harap segera melakukan
         <br>
@@ -109,7 +109,7 @@
         <br>
         Terima kasih :)
         <br>
-        <br>
+        <br> -->
 
           </span>
 
