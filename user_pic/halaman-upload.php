@@ -2,6 +2,8 @@
 
 <?php
 
+session_start();
+
   include "../header.php";
   include "../koneksi_db.php";
   include "../check_session.php";
@@ -50,6 +52,7 @@
      		});
 
 			<!-- end js tombol Upload -->
+
 			
 		</script>
 		
@@ -85,20 +88,29 @@
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar" class="detail" required=""> Dokumen Standar &nbsp;
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required=""> Prototype
 				</div>
-				
+
 				<br>
-		
-				<label for="Lab" class="field-label-4">Lab</label>
-					<select name="JENIS_LAB_UPLOAD" required="" class="text-field w-select">
-						<option value="">-- Pilih Lab --</option>
-						<option value="IXC">Lab IXC</option>
-						<option value="BAN">Lab BAN</option>
-						<option value="BCN">Lab BCN</option>
-						<option value="CNP">Lab CNP</option>
-						<option value="FMC">Lab FMC</option>
-						<option value="ISR">Lab ISR</option>
-						<option value="SOB">Lab SOB</option>
-					</select>
+
+				<?php
+					if($_SESSION['username'] == 'admin') /*admin = nama username buat login*/ { ?>
+						<label for="Lab" class="field-label-4">Lab</label>
+							<select name="JENIS_LAB_UPLOAD" required="" class="text-field w-select">
+								<option value="">-- Pilih Lab --</option>
+								<option value="IXC">Lab IXC</option>
+								<option value="BAN">Lab BAN</option>
+								<option value="BCN">Lab BCN</option>
+								<option value="CNP">Lab CNP</option>
+								<option value="FMC">Lab FMC</option>
+								<option value="ISR">Lab ISR</option>
+								<option value="SOB">Lab SOB</option>
+							</select>
+				
+				<?php } else if ($_SESSION['username'] != 'admin') { ?>
+
+				<label for="Judul" class="field-label">Lab</label>
+					<input readonly="" type="text" class="text-field w-input" maxlength="256" autofocus="true" name="JENIS_LAB_UPLOAD" data-name="Lab" id="Lab" required="" value="<?php echo $_SESSION['lab_pic'];?>">
+
+			<?php } ?>
 			
 				<label for="Desc" class="field-label-5">Deskripsi Dokumen</label>
 					<textarea rows="3" onkeypress ="return textonly(event)" class="text-field w-input" name="DESKRIPSI_UPLOAD" data-name="Deskripsi" placeholder="Deskripsi Tentang Kajian/Dokumen Standard Lab" id="Desc" required=""></textarea>
