@@ -118,9 +118,18 @@ session_start();
 
       if(($data['JENIS_LAB_UPLOAD'] == $_SESSION['lab_pic']) || ($_SESSION['username'] == 'admin')) { //jika lab pic = lab upload or username = admin ?>
 
+    <td width="95px"><div align="center">
         <a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
           &nbsp;
         <a href="../act_delete2.php?id2=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
+    </div></td>
+
+      <?php } else if($data['JENIS_LAB_UPLOAD'] != $_SESSION['lab_pic']) { ?>
+
+    <td width="95px"><div align="center">
+        <a href="#" style="color:blue">Edit</a>
+          &nbsp;
+        <a href="#" style="color:blue">Delete</a>
     </div></td>
 
       <?php } ?>
