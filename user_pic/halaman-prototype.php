@@ -113,10 +113,18 @@ session_start();
   	  <td><div align="center"><?php echo $data['DESKRIPSI_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo '<a target="_blank" class="link-4" href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
       <td width="95px"><div align="center">
+
+        <?php
+
+      if(($data['JENIS_LAB_UPLOAD'] == $_SESSION['lab_pic']) || ($_SESSION['username'] == 'admin')) { //jika lab pic = lab upload or username = admin ?>
+
         <a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
           &nbsp;
-        <a href="../act_delete.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
+        <a href="../act_delete2.php?id2=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
     </div></td>
+
+      <?php } ?>
+
    </tr>
    
    <?php 
