@@ -1,6 +1,9 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
 <?php
+
+session_start();
+
   include "../koneksi_db.php";
   include "../header.php";
   include "../pagination1.php";
@@ -93,6 +96,7 @@
   	  <th><div align="center">LAB</div></th>
   	  <th><div align="center">DESKRIPSI</div></th>
   	  <th><div align="center">URL</div></th>
+      <th><div align="center">ACTION</div></th>
    </tr>
 
    <?php
@@ -108,6 +112,11 @@
   	  <td><div align="center"><?php echo $data['JENIS_LAB_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['DESKRIPSI_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo '<a target="_blank" class="link-4" href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
+      <td width="95px"><div align="center">
+        <a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
+          &nbsp;
+        <a href="act_delete_upload.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
+    </div></td>
    </tr>
    
    <?php 
