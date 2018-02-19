@@ -86,14 +86,8 @@ session_start();
 				<div style="color:white">
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Kajian" class="detail" required="">  Kajian &nbsp;
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar" class="detail" required=""> Dokumen Standar
-
-				<?php
-					if($_SESSION['lab_pic'] == 'CNP' || $_SESSION['lab_pic'] == 'SOB' || $_SESSION['username'] == 'admin') /*admin = nama username buat login*/ { ?>
-					
 					&nbsp;
 					<input type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required=""> Prototype
-
-				<?php } ?>
 				</div>
 
 				<br>
