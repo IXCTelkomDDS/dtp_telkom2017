@@ -112,7 +112,6 @@ session_start();
   	  <td><div align="center"><?php echo $data['JENIS_LAB_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo $data['DESKRIPSI_UPLOAD'];?></div></td>
   	  <td><div align="center"><?php echo '<a target="_blank" class="link-4" href = " '.$data['URL'].'">'.$data['URL'].'<a>';?></td>
-      <td width="95px"><div align="center">
 
         <?php
 
