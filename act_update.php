@@ -25,16 +25,15 @@
 
       //if($file_size > 0) {
 
-      // Cek apakah user ingin mengubah fotonya atau tidak
+      // Cek apakah user ingin mengubah fileya atau tidak
   if(isset($_POST['ubah_file'])) { // Jika user menceklis checkbox yang ada di form ubah, lakukan :
       // Ambil data foto yang dipilih dari form
         $file_name    = $_FILES['NAMA_FILE_UPLOAD']['name'];
         $file_tmp     = $_FILES['NAMA_FILE_UPLOAD']['tmp_name'];
-  
-        // Rename nama fotonya dengan menambahkan tanggal dan jam upload
+
         $filebaru = $file_name;
   
-        // Set path folder tempat menyimpan fotonya
+        // Set path folder tempat menyimpan fileya
         $path = "uploads/".$filebaru;
 
       if(in_array($file_ext, $allowed_ext) === true){
@@ -87,11 +86,10 @@
     $jenis_file     = $_POST['JENIS_FILE_UPLOAD'];
     $jenis_lab      = $_POST['JENIS_LAB_UPLOAD'];
     $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
-    $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
+    //$nama_file      = $_POST['NAMA_FILE_UPLOAD'];
     $url          = $_POST['URL'];
 
-      if($url != '') {
-        $sql = "UPDATE upload_dtp SET TGL_UPLOAD = '$tgl_upload', JUDUL_UPLOAD = '$judul', JENIS_FILE_UPLOAD = '$jenis_file', JENIS_LAB_UPLOAD = '$jenis_lab', DESKRIPSI_UPLOAD = '$deskripsi', NAMA_FILE_UPLOAD = '$nama_file', URL = '$url' WHERE ID_UPLOAD = '$id_upload'";
+        $sql2 = "UPDATE upload_dtp SET TGL_UPLOAD = '$tgl_upload', JUDUL_UPLOAD = '$judul', JENIS_FILE_UPLOAD = '$jenis_file', JENIS_LAB_UPLOAD = '$jenis_lab', DESKRIPSI_UPLOAD = '$deskripsi', URL = '$url' WHERE ID_UPLOAD = '$id_upload'";
         $query2 = mysqli_query($connect,$sql2);
 
             if($query2) { ?>
@@ -111,7 +109,5 @@
           alert('Update Failed');
           location.href='user_pic/halaman-edit.php';
         </script>       
-
-      <?php } ?>
 
     <?php } ?>
