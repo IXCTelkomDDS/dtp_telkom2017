@@ -1,4 +1,11 @@
+<?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
+
 <?php
+
+session_start();
+
+//$_SESSION['lab_pic'] = $data['lab_pic'];
+
     //pagination config start
 	  $rpp = 5; //jml record per halaman
 	  $page = isset($_GET["page"]) ? (intval($_GET["page"])) : 1;
@@ -8,6 +15,7 @@
 	  $i = ($page-1)*$rpp;
 	  $no_urut = ($page-1)*$rpp;
 	  //pagination config end
+
 ?>
 
 <div class="table-responsive">
@@ -23,6 +31,7 @@
 	  <th><div align="center">LAB</div></th>
 	  <th><div align="center">DESKRIPSI</div></th>
 	  <th><div align="center">FILE</div></th>
+	  <th><div align="center">ACTION</div></th>
    </tr>
    </thead>
 
@@ -53,7 +62,7 @@
 					<!-- displaying detail button -->
             <td>
                 <!-- setting id upload and attaching on click listener -->
-                <div align="center"><button class="btn btn-default" data-toggle="modal" data-target="#myModal" onclick="showDetails(this);">Details</button></div>
+                <div align="center"><button class="btn btn-default" data-toggle="modal" data-target="#myModal" style="color: blue" onclick="showDetails(this);">Details</button></div>
             </td>
 
 		<!-- displaying pop up that will show details -->
@@ -94,8 +103,30 @@
 		    </div>
 		</div>
 
+
 				<?php } ?>
 		<?php } ?>
+
+		<?php
+			//if($_SESSION['lab_pic'] != $data['JENIS_LAB_UPLOAD']) {
+			if($data['JENIS_LAB_UPLOAD'] == $_SESSION['lab_pic']) { ?>
+
+	<td width="95px"><div align="center">
+      	<a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
+      		&nbsp;
+      	<a href="../act_delete.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
+    </div></td>
+
+    	<?php } else if($data['JENIS_LAB_UPLOAD'] != $_SESSION['lab_pic']) { ?>
+
+    <td width="95px"><div align="center">
+      	<a href="#" style="color:blue">Edit</a>
+      		&nbsp;
+      	<a href="#" style="color:blue">Delete</a>
+    </div></td>
+
+    	<?php } ?>
+
     </tr>
     </tbody>
 
