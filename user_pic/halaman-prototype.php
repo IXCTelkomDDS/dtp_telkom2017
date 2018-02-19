@@ -120,7 +120,7 @@ session_start();
 
         <a href="halaman-edit.php?id=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Edit</a>
           &nbsp;
-        <a href="../act_delete2.php?id2=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
+        <a href="../act_delete.php?id2=<?php echo $data['ID_UPLOAD'];?>" style="color:blue">Delete</a>
     </div></td>
 
       <?php } ?>
