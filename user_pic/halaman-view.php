@@ -2,6 +2,8 @@
 
 <?php
 
+session_start();
+
   include "../koneksi_db.php";
   include "../header.php";
   include "../pagination1.php";
@@ -74,7 +76,7 @@
             </div>
 
             <?php
-            	include "../data-view.php";
+            	include "data-view.php";
             ?>
 
       </div>
