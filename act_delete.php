@@ -16,8 +16,24 @@ include "koneksi_db.php";
         <?php } else { ?>
             <script>
                 alert('Delete Failed');
-                location.href='user_pic/halaman-upload.php';
+                location.href='user_pic/halaman-view.php';
             </script>
         <?php } ?>
-   
-   <?php } ?>
+
+    <?php } else if($_GET) {
+     $query2 = "DELETE FROM upload_dtp WHERE ID_UPLOAD = '$_GET[id2]'";
+     $delete2 = mysqli_query($connect, $query2);
+
+      	if($delete2) { ?>
+            <script>
+                alert('Delete Successful');
+                location.href='user_pic/halaman-prototype.php';
+            </script>
+        <?php } else { ?>
+            <script>
+                alert('Delete Failed');
+                location.href='user_pic/halaman-prototype.php';
+            </script>
+        <?php } ?>
+
+    <?php } ?>
