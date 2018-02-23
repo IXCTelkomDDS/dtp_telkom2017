@@ -99,7 +99,12 @@
       <a href="http://www.google.com" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-400PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Direct to Internet Browser</a>
       <br>
       <br>
-      <a href="login.php" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Login for User P.I.C</a>
+      <a href="login.php" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Login for User P.I.C
+      </a>
+      <br>
+      <br>
+      <a href="https://www.surveymonkey.com/r/MYKDCCK" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Survey</a>
+    </div>
     </div>
   </div>
   <div id="DIv-About" class="div-about">
@@ -204,5 +209,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+
+
+
+  <!-- survey -->
+<!-- <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgdxwTcbR4_2FVM_2F7oMv0qXxJV9kRs5JITHBYeJs7_2B9IJn1y.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");
+</script> -->
+
+
+
 </body>
 </html>
