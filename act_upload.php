@@ -18,6 +18,7 @@
       $judul        = $_POST['JUDUL_UPLOAD'];
       $jenis_file     = $_POST['JENIS_FILE_UPLOAD'];
       $jenis_lab      = $_POST['JENIS_LAB_UPLOAD'];
+      $unggulan       = $_POST['UNGGULAN'];
       $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
       $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
       $url          = $_POST['URL'];
@@ -27,7 +28,7 @@
           $nama_file = $file_name;
             move_uploaded_file($file_tmp, 'uploads/'.$nama_file);
 
-            $sql = "INSERT INTO upload_dtp (ID_UPLOAD , TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD, URL) VALUES (null, '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+            $sql = "INSERT INTO upload_dtp (ID_UPLOAD , TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, UNGGULAN, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD, URL) VALUES (null, '$tgl_upload', '$judul', '$jenis_file', '$unggulan', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
             $query = mysqli_query($connect,$sql);     
 
             if($query) { ?>
@@ -50,13 +51,14 @@
     $tgl_upload     = date("Y-m-d");
     $judul        = $_POST['JUDUL_UPLOAD'];
     $jenis_file     = $_POST['JENIS_FILE_UPLOAD'];
+    $unggulan       = $_POST['UNGGULAN'];
     $jenis_lab      = $_POST['JENIS_LAB_UPLOAD'];
     $deskripsi      = $_POST['DESKRIPSI_UPLOAD'];
     $nama_file      = $_POST['NAMA_FILE_UPLOAD'];
     $url          = $_POST['URL'];
 
       if($url != '') {
-        $sql2 = "INSERT INTO upload_dtp (ID_UPLOAD , TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD, URL) VALUES (null, '$tgl_upload', '$judul', '$jenis_file', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
+        $sql2 = "INSERT INTO upload_dtp (ID_UPLOAD , TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, UNGGULAN, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, NAMA_FILE_UPLOAD, URL) VALUES (null, '$tgl_upload', '$judul', '$jenis_file', '$unggulan', '$jenis_lab', '$deskripsi', '$nama_file', '$url')";
         $query2 = mysqli_query($connect,$sql2);
 
             if($query2) { ?>
