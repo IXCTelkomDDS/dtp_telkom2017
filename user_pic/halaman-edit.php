@@ -48,6 +48,14 @@ session_start();
           <input type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Prototype'?'checked="checked"':'';?>> Prototype
         </div>
 
+        <?php if (($data['JENIS_FILE_UPLOAD'] == 'Prototype') AND ($data['UNGGULAN']=='Unggulan')) { ?>
+
+        <br>
+
+        <div style="color: white"><input type="checkbox" name="UNGGULAN" value="Unggulan" <?php echo $data['UNGGULAN']=='Unggulan'?'checked="checked"':'';?>> Ceklis jika produk unggulan <br></div>
+
+        <?php } ?>
+
         <br>
 
         <?php
@@ -76,19 +84,9 @@ session_start();
       
       <?php if ($data['JENIS_FILE_UPLOAD'] != 'Prototype') { ?>
 
-      <?php
-        $dir = "../uploads/"; // Directory where files are stored
-          if ($dir_list = opendir($dir)) {
-            while($file = readdir($dir_list)) {
-            } 
-
-            ?>
-
         <label for="File" class="field-label-5">File (Jenis File harus pdf)</label>
           <div style="color: white"><input type="checkbox" name="ubah_file" value="true"> Ceklis jika ingin mengubah file dokumen <br></div>
           <input type="file" name="NAMA_FILE_UPLOAD" class="form-control" data-name="File" id="File">
-
-          <?php } ?>
       
       <?php } ?>
 

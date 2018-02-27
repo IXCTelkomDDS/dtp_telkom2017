@@ -30,11 +30,16 @@
   <div id="Hero-Section" class="hero-section slide1">
     <div data-ix="new-interaction" id="Container-Hero" class="container-5 w-container">
       <h1 data-w-id="efc93858-f187-b6ef-bf0f-20b37d06af1e" style="-webkit-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%" class="heading welcome">IXC.Telkomku.Com</h1>
-      <div data-w-id="5e3dfe1a-a809-865a-8fe8-000f52a4fb67" style="-webkit-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%" class="hero-subheading sub">Provide Your Expert at Digital Infrastructure Experience..</div>
+      <div data-w-id="5e3dfe1a-a809-865a-8fe8-000f52a4fb67" style="-webkit-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%" class="hero-subheading sub">Provide Your Expert at Digital Infrastructure Experience</div>
       <a href="http://www.google.com" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-240PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-240PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-240PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-240PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Direct to Internet Browser</a>
       <br>
       <br>
-      <a href="../act_logout.php" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Logout</a>
+      <a href="../act_logout.php" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Logout
+      </a>
+      <br>
+      <br>
+      <!--<a href="https://www.surveymonkey.com/r/MYKDCCK" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Survey
+      </a>-->
     </div>
   </div>
   <div id="DIv-About" class="div-about">
@@ -76,7 +81,7 @@
         <div class="content-block coba w-col w-col-4"><img src="../images/broadband-connection.png" width="205" class="content-image">
           <h4 class="heading-3">Broadband Access Network<br>Research (BAN)</h4><a href="ban-page.php" class="button-4 atas w-button">Continue Here</a></div>
         <div class="content-block coba w-col w-col-4"><img src="../images/iot-759.jpg" width="208" srcset="../images/iot-759-p-500.jpeg 500w, ../images/iot-759.jpg 759w" sizes="(max-width: 479px) 83vw, 208px" class="content-image">
-          <h5 class="heading-3">Infrastructure Service<br>Research (ISR)</h5><a href="iot-page.php" class="button-4 atas w-button">Continue Here</a></div>
+          <h5 class="heading-3">Infrastructure Service<br>Research (ISR)</h5><a href="isr-page.php" class="button-4 atas w-button">Continue Here</a></div>
       </div>
       <div class="row-3 w-row">
         <div class="content-block coba w-col w-col-3"><img src="../images/cloud.png" width="129" class="content-image">
@@ -86,7 +91,7 @@
         <div class="content-block coba w-col w-col-3"><img src="../images/iot-systems-integrators.jpg" width="173" class="content-image">
           <h1 class="heading-3">Broadband Core Network<br>Research (BCN)</h1><a href="bcn-page.php" class="button-4 bawah w-button">Continue Here</a></div>
         <div class="content-block coba w-col w-col-3"><img src="../images/it-security.ashx.png" width="181" class="content-image">
-          <h1 class="heading-3">Security, OSS<br>and BSS Research (SOB)</h1><a href="security-page.php" class="button-4 bawah w-button">Continue Here</a></div>
+          <h1 class="heading-3">Security, OSS<br>and BSS Research (SOB)</h1><a href="sob-page.php" class="button-4 bawah w-button">Continue Here</a></div>
       </div>
     </div>
   </div>

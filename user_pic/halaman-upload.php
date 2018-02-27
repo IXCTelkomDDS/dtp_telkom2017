@@ -92,6 +92,10 @@ session_start();
 
 				<br>
 
+				<div style="color: white"><input type="checkbox" name="UNGGULAN" value="Unggulan"> Ceklis jika produk unggulan <br></div>
+
+				<br>
+
 				<?php
 					if($_SESSION['username'] == 'admin') /*admin = nama username buat login*/ { ?>
 						<label for="Lab" class="field-label-4">Lab</label>
