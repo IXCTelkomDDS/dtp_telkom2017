@@ -31,6 +31,10 @@
           <h1 class="heading-17">our responsibility</h1><img src="../images/sustainable-and-responsible-icon.png" width="141" class="image-ixc respon">
           <p class="paragraph-ixc responsibility">Menyediakan Expert pada bidang Digital Infrastructure Experience Creation, User Journey &amp; Evaluation, Presenting &amp; Showcasing Experience.</p>
         </div>
+        <div class="about">
+          <h1 class="heading-17">produk unggulan</h1>
+          <p class="paragraph-ixc responsibility">Daftar Produk Unggulan<br>Lab Digital Infrastructure Experience Creation</p><a href="ixc-unggulan.php" class="link-10">Load more . . .</a></p>
+        </div>
       </div>
       <div class="column-48 w-col w-col-4">
         <div class="about research">

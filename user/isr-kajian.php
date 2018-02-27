@@ -5,7 +5,7 @@
   include "../header.php";
   include "../pagination1.php";
 
-		$reload = "iot-kajian.php?pagination=true";
+		$reload = "isr-kajian.php?pagination=true";
 		$sql = "SELECT * FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Kajian' AND JENIS_LAB_UPLOAD = 'ISR' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 

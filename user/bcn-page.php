@@ -11,7 +11,7 @@
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
     <div class="container-7 w-container"><a href="../index.php" class="w-nav-brand"><img src="../images/logo-telkom.png" width="80.5"></a>
-      <nav role="navigation" class="w-nav-menu" style="font-weight: bold"><a href="../index.php" id="home" class="navlink w-nav-link">Home</a><a href="#About" id="about" class="navlink w-nav-link">About</a><a href="#End-Section" class="navlink w-nav-link">Customer Care</a></nav>
+      <nav role="navigation" class="w-nav-menu" style="font-weight: bold"><a href="../index.php" id="home" class="navlink w-nav-link">Home</a><a href="#About" id="about" class="navlink w-nav-link">About BCN</a><a href="#End-Section" class="navlink w-nav-link">Customer Care</a></nav>
       <div class="w-nav-button">
         <div class="w-icon-nav-menu"></div>
       </div>
@@ -30,6 +30,10 @@
         <div class="about">
           <h1 class="heading-17">our responsibility</h1><img src="../images/sustainable-and-responsible-icon.png" width="141" class="image-ixc respon">
           <p class="paragraph-ixc responsibility">Menyediakan Expert pada bidang Broadband Core Network dan IP/MPLS, L3/L2 VPN &amp; GE Connectivities, Optical Network &amp; DWDM, OTN, ID-Ring, Routing Protocol (IGP, OSPF, BGP), IPv4/IPv6, Metro Ethernet, Backbone Network, PoP.</p>
+        </div>
+        <div class="about">
+          <h1 class="heading-17">produk unggulan</h1>
+          <p class="paragraph-ixc responsibility">Daftar Produk Unggulan<br>Lab Broadband Core Network Research</p><a href="bcn-unggulan.php" class="link-10">Load more . . .</a></p>
         </div>
       </div>
       <div class="column-48 w-col w-col-4">
