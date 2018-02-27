@@ -15,7 +15,7 @@ session_start();
 ?>
     
       
-  <title>Halaman Upload</title>
+  <title>Halaman Update</title>
   
 <body>
   <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
@@ -31,7 +31,7 @@ session_start();
   </div>
   <div id="Kajian" class="section-14">
     <div class="container-13 w-container">
-      <h2 class="heading-2 mobile upload">Update Kajian &amp; Dokumen Standard</h2>
+      <h2 class="heading-2 mobile upload">Update Kajian, Dokumen Standard &amp; Prototype</h2>
       <div class="div-block-12">
     
         <div class="form-block w-form">
