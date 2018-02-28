@@ -32,6 +32,21 @@ session_start();
      		});
 			
 			<!-- end js field File -->
+
+			<!-- js field File -->
+		
+			$(document).ready(function(){
+    		$("#prototype2").css("display","none"); //Menghilangkan prototype2 ketika pertama kali dijalankan
+        		$(".detail").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
+        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Prototype") { //Jika radio button selain "Prototype" dipilih maka tampilkan prototype2
+            			$("#prototype2").slideDown("fast"); //Efek Slide Down (Menampilkan prototype2)
+        			} else {
+            			$("#prototype2").slideUp("fast");  //Efek Slide Up (Menghilangkan prototype2)
+        			}
+     			});
+     		});
+			
+			<!-- end js field File -->
 			
 			<!-- js tombol Upload -->
 			
@@ -92,7 +107,9 @@ session_start();
 
 				<br>
 
-				<div style="color: white"><input type="checkbox" name="UNGGULAN" value="Unggulan"> Ceklis jika produk unggulan <br></div>
+				<div id="prototype2" style="display:none" >
+					<div style="color: white"><input type="checkbox" name="UNGGULAN" value="Unggulan"> Ceklis jika produk unggulan (Untuk Prototype) <br></div>
+				</div>
 
 				<br>
 
