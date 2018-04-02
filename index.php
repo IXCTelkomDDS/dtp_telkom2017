@@ -1,224 +1,688 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
 
-<!DOCTYPE html>
-<!--  This site was created in Webflow. http://www.webflow.com  -->
-<!--  Last Published: Tue Dec 19 2017 09:47:38 GMT+0000 (UTC)  -->
-<html data-wf-page="59fd0c1ae534be0001f52c87" data-wf-site="59fd0c1ae534be0001f52c86">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
+<?php
 
-  <title>Kajian IV DTP</title>
-  
-  <!-- bootstrap pagination -->
-  <link href="bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-  
-  <!-- chart -->
-  <script src="js/jquery-1.10.1.min.js"></script>
-  <script src="js/highcharts.js"></script>
- 
-  <!-- css table -->
-  <link rel="stylesheet" type="text/css" href="../css/css_table.css">
-  
-  <!-- css popup -->
-  <!-- <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	session_start();
 
-  <link href="css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/digitaltouchpoint.webflow.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>
-  <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Lato:100,100italic,300,300italic,400,400italic,700,700italic,900,900italic","Changa One:400,400italic","Oswald:200,300,400,500,600,700","Merriweather:300,300italic,400,400italic,700,700italic,900,900italic","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic","Droid Serif:400,400italic,700,700italic","Bitter:400,700,400italic","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Droid Sans:400,700","Inconsolata:400,700","PT Sans:400,400italic,700,700italic","Righteous:regular:latin-ext,latin","Berkshire Swash:regular:latin-ext,latin","Bilbo Swash Caps:regular","Damion:regular"]  }});</script>
+	include "koneksi_db.php";
+	include "header.php";
 
-  <!-- [if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif] -->
-  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link href="images/coba-logo.png" rel="shortcut icon" type="image/x-icon">
-  <link href="images/logo-telkom_1.png" rel="apple-touch-icon">
-  <script type="text/javascript">(function(d, t, e, m){
-    // Async Rating-Widget initialization.
-    window.RW_Async_Init = function(){
-        RW.init({
-            huid: "380741",
-            uid: "b343a723c0cff0c7a5e2735df7c0fde9",
-            source: "website",
-            options: {
-                "advanced": {
-                    "layout": {
-                        "lineHeight": "24px"
-                    },
-                    "font": {
-                        "size": "12px",
-                        "type": "\"Comic Sans MS\""
-                    }
-                },
-                "size": "large",
-                "style": "oxygen1",
-                "isDummy": false
-            } 
+?>
+
+	<script src="js/jquery.js"></script>
+		<script>
+		
+		<!-- js field File -->
+		
+			$(document).ready(function(){
+    		$("#research2").css("display","none"); //Menghilangkan file_info2 ketika pertama kali dijalankan
+        		$(".detail2").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
+        			if ($("input[name='jenis_search']:checked").val() != "Prototype") { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+            			$("#research2").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
+        			} else {
+            			$("#research2").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
+        			}
+					if ($("input[name='jenis_search']:checked").val() == "Prototype" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+            			$("#prototype3").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
+        			} else {
+            			$("#prototype3").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
+        			}
+     			});
+     		});
+			
+			<!-- end js field File -->
+
+		</script>
+
+
+
+		<title>Kajian IV DTP IRS</title>
+
+
+	<body class="no-trans">
+		<!-- scrollToTop -->
+		<!-- ================ -->
+		<div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+
+		<!-- header start -->
+		<!-- ================ --> 
+		<header class="header navbar navbar-fixed-top" style="background-color: #D3D3D3; height: 100px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2">
+
+						<!-- header-left start -->
+						<!-- ================ -->
+						<div class="header-left clearfix">
+
+							<!-- logo -->
+							<div class="logo smooth-scroll">
+								<a href="#banner"><img id="logo" src="images/DDS-telkom.png" width="60" alt="Worthy"></a>
+							</div>
+
+						</div>
+						<!-- header-left end -->
+
+					</div>
+					<div class="col-md-10">
+
+						<!-- header-right start -->
+						<!-- ================ -->
+						<div class="header-right clearfix">
+
+							<!-- main-navigation start -->
+							<!-- ================ -->
+							<div class="main-navigation animated">
+
+								<!-- navbar start -->
+								<!-- ================ -->
+								<nav class="navbar navbar-default" role="navigation">
+
+										<!-- Collect the nav links, forms, and other content for toggling -->
+										<div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
+											<ul class="nav navbar-nav navbar-left" style="padding-left: 33px;">
+												<li><a href="#banner" style="font-weight: bold;">Home</a></li>
+												<li><a href="#about" style="font-weight: bold;">About IRS</a></li>
+												<li><a href="#lab" style="font-weight: bold;">Our Lab</a></li>
+												<li><a href="#research" style="font-weight: bold;">Research Result</a></li>
+												<li><a href="#contact" style="font-weight: bold;">Contact Us</a></li>
+											</ul>
+
+											<ul class="nav navbar-nav navbar-right">
+												<!-- logo -->
+												<div class="logo smooth-scroll">
+													<a href="index.php"><img id="logo" src="images/logo-telkom.png" width="90" alt="Worthy"></a>
+												</div>
+
+											</ul>
+										</div>
+
+								</nav>
+								<!-- navbar end -->
+
+							</div>
+							<!-- main-navigation end -->
+
+						</div>
+						<!-- header-right end -->
+
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- header end -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div id="banner" class="section clearfix object-non-visible" data-animation-effect="fadeIn" style="background-color: white; height: 650px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+
+						<br>
+						<br>
+
+					<!-- Search -->
+					<div class= "nav navbar-nav navbar-right">
+						<div class="wrap-input100 validate-input" style="height: 30px; font-size: 15px; background-color: white; border-color: white;"><span style="font-weight: bold;"> Search : </span> &nbsp;
+							<input type="radio" name="jenis_search" value="Research Result" class="detail2" required=""> Research Result &nbsp;
+							<input type="radio" name="jenis_search" value="Prototype" class="detail2" required=""> Prototype
+							<span class="focus-input100"></span>
+						</div>
+					</div>
+
+					<br>
+					<br>
+
+					<div class="col-sm-8">
+						<div class="media">
+							<div class="media-body text-left">
+								<img src="images/home.jpg" width="800" style="height: 450px;" alt="">
+							</div>
+						</div>
+					</div>
+
+					<div class= "nav navbar-nav navbar-right col-md-3">
+						<div id="research2">
+	                    	<form method="post" action="user/research-result.php">
+	                        	<div class="form-group input-group">
+	                            	<input style="width: 210px; height: 30px;" type="text" name="keyword" class="form-control" placeholder="Search" value="<?php echo $_REQUEST['keyword'];?>">
+	                            	<span class="form-group input-group-btn">
+	                                	<button style="height: 30px; padding-right: 30px; font-size: 12px;" class="button btn-primary" type="submit">Search</button>
+	                            	</span>
+	                        	</div>
+	                    	</form>
+	                    </div>
+
+	                    <div id="prototype3">
+	                    	<form method="post" action="user/prototype.php">
+	                        	<div class="form-group input-group">
+	                            	<input style="width: 210px; height: 30px;" type="text" name="keyword2" class="form-control" placeholder="Search" value="<?php echo $_REQUEST['keyword2'];?>">
+	                            	<span class="form-group input-group-btn">
+	                                	<button style="height: 30px; padding-right: 30px; font-size: 12px;" class="button btn-primary" type="submit">Search</button>
+	                            	</span>
+	                        	</div>
+	                    	</form>
+	                    </div>
+	                </div>
+
+						<div class="col-sm-4">
+							<div class="media">
+								<div class="media-body text-left">
+									<h4 class="media-heading" style="margin-top: 30px; margin-left: 50px;">---- News of IRS ----</h4>
+									<p><li>Master Plan : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur quo quis exercitationem reprehenderit dolor vel ducimus, voluptate eaque suscipit iste placeat. </li></p>
+									<p><li>Networking Planning : </li></p>
+									<p><li>Consultation : </li></p>
+									<p><li>Assessment Network : </li></p>
+									<p><li>Assessment Security : </li></p>
+									<p><li>Operational Problem Analysis : </li></p>
+									<p><li>Technical Support : </li></p>
+									<p><li>Testing/PoC : </li></p>
+								</div>
+							</div>				
+						</div>
+
+                	</div>
+                	<!-- End Search -->
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+
+		<!-- Garis -->
+		<hr class="onepixel">
+		<!-- End Garis -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section clearfix object-non-visible" data-animation-effect="fadeIn" style="background-color: white;">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-12">
+						<h1 id="about" class="title text-center" style="margin-bottom: 35px;">About IRS</h1>
+						<div class="col-sm-12">
+							<div class="media">
+								<div class="media-body text-left">
+									<img src="images/IRS.jpg" width="1300" style="height: 450px; margin-bottom: 23px;" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="media">
+							<div class="media-body text-left">
+								<h4 class="media-heading" style="margin-left: 50px; font-size: 26px;">Mission Statement :</h4>
+									<p>Ensuring the effectiveness of end-to-end infrastructure research and development activities in accordance with company strategy and planning.</p>
+							</div>
+						</div>
+
+						<div class="media">
+							<div class="media-body text-left">
+								<h4 class="media-heading" style="margin-left: 50px; font-size: 26px;">Our Activity :</h4>
+									<p><li style="font-weight: bold; font-size: 16px;">Standardization : </li> Development of telecommunication system standards and platforms.</p>
+									<p><li style="font-weight: bold; font-size: 16px;">Expertise Help on Digital Infra : </li> Providing expertise in the field of telecommunication structures (BANTEK).</p>
+									<p><li style="font-weight: bold; font-size: 16px;">Technology Research on Digital Infra : </li> Do research on infrastructure technology that will be applied in TELKOM.</p>
+									<p><li style="font-weight: bold; font-size: 16px;">Shared Service for Amoeba : </li> Supporting the needs of amoeba related to infrastructure technology.</p>
+									<p><li style="font-weight: bold; font-size: 16px;">Joint Research : </li> Do joint research on new technology.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="media">
+							<div class="media-body text-left">
+								<h4 class="media-heading" style="margin-left: 50px; font-size: 26px;">Job Responsibilities :</h4>
+									<p><li>Perform technology scanning and initial technology assessment.</li></p>
+									<p><li>Undertake the development and preparation of review documents, system standards and implement updating of TELKOM's strategic documents related to technology.</li></p>
+									<p><li>Carry out the performance evaluation of technologies including configuration in order to support the activities of the network improvement / deployment and service development and re-engineering.</li></p>
+									<p><li>Carry out research and development of models of network infrastructure management through IT capacity management of network and service (OSS and BSS), and security infrastructure.</li></p>
+									<p><li>Drafting the design and innovation of digital service & infrastructure integration, especially for products related to infrastructure.</li></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+
+		<!-- Garis -->
+		<hr class="onepixel">
+		<!-- End Garis -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section" style="background-color: white;">
+			<div class="container">
+				<h1 class="text-center title" id="lab">Our Lab</h1>
+				<div class="separator"></div>
+				<p class="lead text-center" style="font-weight: bold;">This is the lab that is in IRS. There are seven labs on IRS</p>
+				<br>			
+				<div class="row object-non-visible" data-animation-effect="fadeIn">
+					<div class="col-md-12">
+
+						<!-- portfolio items start -->
+						<div class="isotope-container row grid-space-20">
+							<div class="col-sm-6 col-md-3 isotope-item web-design">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/BAN3.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-1">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;">Broadband Access Network Research (BAN)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-1" style="font-weight: bold; color: black;">BAN</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-1" tabindex="-1" role="dialog" aria-labelledby="project-1-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Ensuring the development of BAN technology research to provide recommendations on technology and infrastructure roadmaps, recommendations for strategic plans for infrastructure development and recommendations to support the preparation of infrastructure development business plans.</li></p>
+															<p><li>Ensuring BAN planning to support the implementation of infrastructure development.</li></p>
+															<p><li>Ensuring alternative proposals for more prospective BAN architectural configurations in order to support infrastructure & network improvement activities.</li></p>
+															<p><li>Ensuring the development of BAN laboratory / testbed as miniature network operational for new service research activities and simultaneously for problem troubleshooting facilities in operational.</li></p>
+															<p><li>Ensure the assistance of BAN aspect (ISP & OSP) to support relevant units in the development and implementation of infrastructure.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of BROADBAND ACCESS NETWORK LAB functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold; font-size: 26px;">BAN Lists :</h3>
+															<p><li><a href="user/ban-review.php">List of reviews BAN</a></li></p>
+															<p><li><a href="user/ban-standardization.php">List of standardization documents BAN</a></li></p>
+															<p><li><a href="user/ban-featured.php">List of featured products BAN</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+
+							<div class="col-sm-6 col-md-3 isotope-item app-development">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/BCN.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-2">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;"">Broadband Core Network Research (BCN)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-2" style="font-weight: bold; color: black;">BCN</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-2" tabindex="-1" role="dialog" aria-labelledby="project-2-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Perform technology scanning and initial assessment of IP & Metro Network technology.</li></p>
+															<p><li>Conduct research and technology development of IP and Metro Network to provide recommendations on roadmap technology and infrastructure, and planning IP & Metro Network to support the implementation of infrastructure development.</li></p>
+															<p><li>Perform standard setting system and to implement updates TELKOM strategic documents related to IP technology and the Metro Network.</li></p>
+															<p><li>Ensuring BCN planning to support the implementation of infrastructure development.</li></p>
+															<p><li>Ensuring more prospective BCN configuration alternative proposal in order to support infrastructure & network improvement activities.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of BROADBAND CORE NETWORK LAB functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">BCN Lists :</h3>
+															<p><li><a href="user/bcn-review.php">List of reviews BCN</a></li></p>
+															<p><li><a href="user/bcn-standardization.php">List of standardization documents BCN</a></li></p>
+															<p><li><a href="user/bcn-featured.php">List of featured products BCN</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							
+							<div class="col-sm-6 col-md-3 isotope-item web-design">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/CNP.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-3">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;">Cloud and Node Platform Research (CNP)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-3" style="font-weight: bold; color: black;">CNP</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-3" tabindex="-1" role="dialog" aria-labelledby="project-3-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Ensuring technology scanning and initial assessment technology in order to develop Telco CNP infrastructure technologies, including elements of infrastructure technologies such as Network Function Virtualization (NFV), Internet & Policy Control (PCRF / PCEF, BRAS / WAG, AAA), Voice Service Control (IMS, SBC, Softswitch, STP).</li></p>
+															<p><li>Ensures Telco CNP research to provide recommendations for technology roadmaps, strategic plan recommendations for infrastructure development and recommendations to support the development of infrastructure development business plans.</li></p>
+															<p><li>Ensure alternative proposal of Telco CNP architectural configurations that are more prospective in order to support infrastructure & network improvement activities.</li></p>
+															<p><li>Ensure the development laboratory / testbed of Telco CNP as miniaturized operational networks to support new service research activities as well as for troubleshooting operational problems.</li></p>
+															<p><li>Guarantee the help aspect of Telco CNP aspect to support related units in the framework of infrastructure development and implementation.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of CLOUD & NODE PLATFORM LAB functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">CNP Lists :</h3>
+															<p><li><a href="user/cnp-review.php">List of reviews CNP</a></li></p>
+															<p><li><a href="user/cnp-standardization.php">List of standardization documents CNP</a></li></p>
+															<p><li><a href="user/cnp-featured.php">List of featured products CNP</a></li></p>
+													</div>
+
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							
+							<div class="col-sm-6 col-md-3 isotope-item site-building">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/FMC.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-4">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;"">Mobility and FMC Reseacrh (FMC)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-4" style="font-weight: bold; color: black;">FMC</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-4" tabindex="-1" role="dialog" aria-labelledby="project-4-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Ensure technology scanning and initial assessment technology in order to develop Mobility & FMC infrastructure technology, which includes elements of infrastructure technology such as WiFi, LTE, 4G, 5G, millimeter-wave, IP radio, Satellite, short-range communication, WAG, ANDSF, and other wireless technologies.</li></p>
+															<p><li>Ensure Mobility & FMC's research to provide recommendations on technology roadmaps, strategic plan recommendations for infrastructure development and recommendations to support the preparation of infrastructure development business plans.</li></p>
+															<p><li>Ensure the preparation of system standards and implement updating of TELKOM's strategic documents related to Mobility & FMC technology.</li></p>
+															<p><li>Ensure alternative proposal of Mobility & FMC architectural configuration that is more prospective in order to support infrastructure & network improvement activities.</li></p>
+															<p><li>Ensure the development of the laboratory / testbed Mobility & FMC as a miniature operational network to support new service research activities and simultaneously for troubleshooting operational problems.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of MOBILITY & FMC LAB functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">FMC Lists :</h3>
+															<p><li><a href="user/fmc-review.php">List of reviews FMC</a></li></p>
+															<p><li><a href="user/fmc-standardization.php">List of standardization documents FMC</a></li></p>
+															<p><li><a href="user/fmc-featured.php">List of featured products FMC</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							
+							<div class="col-sm-6 col-md-3 isotope-item app-development">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/ISR.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-5">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;">Infrastructure Service Research (ISR)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-5" style="font-weight: bold; color: black;">ISR</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-5" tabindex="-1" role="dialog" aria-labelledby="project-5-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Ensure ready for sales products of in-house innovation for SME ecosystem.</li></p>
+															<p><li>Ensure DTP (Digital Touch Points) is ready for service in-house innovation results for SME ecosystem.</li></p>
+															<p><li>Assist the operation of the SME ecosystem.</li></p>
+															<p><li>Monitor product performance within SME ecosystem (especially in-house innovation) and prepare its reporting.</li></p>
+															<p><li>Guarding the in-house product innovation development project for the SME ecosystem and presenting its reporting.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of ECOSYSTEM SME INNOVATIONS functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">ISR Lists :</h3>
+															<p><li><a href="user/isr-review.php">List of reviews ISR</a></li></p>
+															<p><li><a href="user/isr-standardization.php">List of standardization documents ISR</a></li></p>
+															<p><li><a href="user/isr-featured.php">List of featured products ISR</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							
+							<div class="col-sm-6 col-md-3 isotope-item web-design">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/IXC.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-6">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;">Infrastructure Experience Creation (IXC)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-6" style="font-weight: bold; color: black;">IXC</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-6" tabindex="-1" role="dialog" aria-labelledby="project-6-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Ensure the development of telecommunication technical standards (STEL) and interoperability standards, and carry out updated document testing according to their fields.</li></p>
+															<p><li>Ensure the availability and implementation of technical and operational standards development and to implement updating of TELKOM's strategic documents according to their field.</li></p>
+															<p><li>Implement technical compliance (network security, fraud & integrity), technical evaluation, and provide recommendations and reports on the results of technical compliance.</li></p>
+															<p><li>Ensuring availability and implementation of technical trials for utilization has been integrated with Mini Lab.</li></p>
+															<p><li>Ensuring the availability of important data & information on the management of the relevant System Integration & Readiness Lab for the formulation of PIA RKA strategy and proposals.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of SYSTEM INTEGRATION READINESS functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">IXC Lists :</h3>
+															<p><li><a href="user/ixc-review.php">List of reviews IXC</a></li></p>
+															<p><li><a href="user/ixc-standardization.php">List of standardization documents IXC</a></li></p>
+															<p><li><a href="user/ixc-featured.php">List of featured products IXC</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>
+							
+							<div class="col-sm-6 col-md-3 isotope-item site-building">
+								<div class="image-box">
+									<div class="overlay-container">
+										<img src="images/SOB.jpg" alt="">
+										<a class="overlay" data-toggle="modal" data-target="#project-7">
+											<i class="fa fa-search-plus"></i>
+											<span style="font-weight: bold;">Security, OSS and BSS Research (SOB)</span>
+										</a>
+									</div>
+									<a class="btn btn-default btn-block" data-toggle="modal" data-target="#project-7" style="font-weight: bold; color: black;">SOB</a>
+								</div>
+								<!-- Modal -->
+								<div class="modal fade" id="project-7" tabindex="-1" role="dialog" aria-labelledby="project-7-label" aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="row">
+													<div class="col-md-6">
+														<h3 style="font-weight: bold; font-size: 26px;">Job Responsibilities :</h3>
+															<p><li>Perform technology scanning and initial assessment of Security technology, OSS & BSS.</li></p>
+															<p><li>Conduct research and development of Security System concept, OSS & BSS telecommunication network to support TELKOM business.</li></p>
+															<p><li>Conducting the development of Security system standard, OSS & BSS as well as proposed updating of TELKOM strategic document in Security, OSS & BSS.</li></p>
+															<p><li>Perform planning and development of Security System, OSS & BSS to support the implementation of operational management of network infrastructure.</li></p>
+															<p><li>Provide expertise assistance in Security, OSS & BSS.</li></p>
+													</div>
+
+													<div class="col-md-6">	
+														<h4 style="font-size: 26px; margin-top: 30px;">Mission Statement :</h4>
+														<p>Leading the management of SECURITY, OSS & BSS LAB functions to support performance achievement.</p>
+
+														<h3 style="font-weight: bold;">SOB Lists :</h3>
+															<p><li><a href="user/sob-review.php">List of reviews SOB</a></li></p>
+															<p><li><a href="user/sob-standardization.php">List of standardization documents SOB</a></li></p>
+															<p><li><a href="user/sob-featured.php">List of featured products SOB</a></li></p>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Modal end -->
+							</div>							
+
+						</div>
+						<!-- portfolio items end -->
+					
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- section end -->
+
+		<!-- Garis -->
+		<hr class="onepixel">
+		<!-- End Garis -->
+
+		<!-- section start -->
+		<!-- ================ -->
+		<div class="section" style="background-color: white;">
+			<div class="container">
+				<h1 id="research" class="title text-center">Research Result</h1>
+				<div class="space"></div>
+				<div class="row" style="padding-left: 200px;">
+					<div class="col-md-12">
+						<div class="media testimonial">
+							<div class="media-left" style="width: 70px; height: 70px;">
+								<a class="button" href="https://bantek.telkomku.com/@dds/login.php" target="_blank"><img src="images/tech-supp2.jpg" alt=""></a>
+							</div>
+							<div class="media-body">
+								<h2 class="media-heading" style="font-weight: bold; margin-left: 15px;"><a href="https://bantek.telkomku.com/@dds/login.php" target="_blank">Technical Support</a></h2>
+								<blockquote>
+									<p style="margin-left: 15px;">To assist employees in technical matters in the Division on Digital Service Telkom Bandung.</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class="row" style="padding-left: 200px;">
+					<div class="col-md-12">
+						<div class="media testimonial">
+							<div class="media-left" style="width: 70px; height: 70px;">
+								<a href="user/research-result.php"><img src="images/list_result.png" alt=""></a>
+							</div>
+							<div class="media-body">
+								<h2 class="media-heading" style="font-weight: bold; margin-left: 15px;"><a href="user/research-result.php">Research Result IRS</a></h2>
+								<blockquote>
+									<p style="margin-left: 15px;">Research result and standard documents produced by each lab at the IRS.</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class="row" style="padding-left: 200px;">
+					<div class="col-md-12">
+						<div class="media testimonial">
+							<div class="media-left" style="width: 70px; height: 70px;">
+								<a href="user/prototype.php"><img src="images/prototype.jpg" alt=""></a>
+							</div>
+							<div class="media-body">
+								<h2 class="media-heading" style="font-weight: bold; margin-left: 15px;"><a href="user/prototype.php">Prototype</a></h2>
+								<blockquote>
+									<p style="margin-left: 15px;">The results of a review from the lab IRS in the form of a prototype.</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- .section end -->
+
+		
+<?php
+	include "footer.php";
+?>
+
+
+
+<!-- pop up details -->
+<script type="text/javascript">
+    function showDetails2(button) {
+        $.ajax({
+            success: function(response) {
+            }
         });
-        RW.render();
-    };
-        // Append Rating-Widget JavaScript library.
-    var rw, s = d.getElementsByTagName(e)[0], id = "rw-js",
-        l = d.location, ck = "Y" + t.getFullYear() + 
-        "M" + t.getMonth() + "D" + t.getDate(), p = l.protocol,
-        f = ((l.search.indexOf("DBG=") > -1) ? "" : ".min"),
-        a = ("https:" == p ? "secure." + m + "js/" : "js." + m);
-    if (d.getElementById(id)) return;              
-    rw = d.createElement(e);
-    rw.id = id; rw.async = true; rw.type = "text/javascript";
-    rw.src = p + "//" + a + "external" + f + ".js?ck=" + ck;
-    s.parentNode.insertBefore(rw, s);
-    }(document, new Date(), "script", "rating-widget.com/"));</script>
-    
-</head>
-  
-<body>
-  <div data-collapse="medium" data-animation="default" data-duration="400" class="navbar w-nav">
-    <div class="container-7 w-container">
-      <a href="index.php" class="w-nav-brand"><img src="images/logo-telkom.png" width="80.5" class="image-31"></a>
-      <nav role="navigation" class="w-nav-menu" style="font-weight:bold">
-        <a id="home" href="#Hero-Section" class="navlink w-nav-link">Home</a>
-        <a href="#DIv-About" id="about" class="navlink w-nav-link">About IRS</a>
-        <a id="home" href="#Content-Section" class="navlink w-nav-link">IRS Scheme</a>
-        <a href="#banteK" id="bantek" class="navlink w-nav-link">Bantek &amp; Hasil Riset</a>
-        <a href="#End-Section" class="navlink w-nav-link">Customer Care</a>
-      </nav>
-      <div class="w-nav-button">
-        <div class="icon w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div>
-  <div id="Hero-Section" class="hero-section slide1">
-    <div data-ix="new-interaction" id="Container-Hero" class="container-5 w-container">
-      <h1 data-w-id="efc93858-f187-b6ef-bf0f-20b37d06af1e" style="-webkit-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-345PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%" class="heading welcome">IXC.Telkomku.Com</h1>
-      <div data-w-id="5e3dfe1a-a809-865a-8fe8-000f52a4fb67" style="-webkit-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-475PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%" class="hero-subheading sub">Provide Your Expert at Digital Infrastructure Experience</div>
-      <a href="http://www.google.com" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-400PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Direct to Internet Browser</a>
-      <br>
-      <br>
-      <a href="login.php" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Login for User P.I.C
-      </a>
-      <!-- <br>
-      <br>
-      <a href="https://www.surveymonkey.com/r/MXDWZSK" target="_blank" data-w-id="2c0d1704-74c7-bee9-aa31-b8f6d4688da7" style="-webkit-transform:translateX(-100PX) translateY(0)translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-moz-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);-ms-transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);transform:translateX(-100PX) translateY(0) translateZ(0) scaleX(1) scaleY(1) scaleZ(1) rotateX(0) rotateY(0) rotateZ(0) skewX(0) skewY(0);opacity:0%;font-weight:bold;color:yellow" class="button w-button">Survey
-      </a> -->
-    </div>
-    </div>
-  </div>
-  <div id="DIv-About" class="div-about">
-    <h2 class="heading-2 mobile">About</h2>
-    <div id="Row-About" class="row-4 row-about w-row">
-      <div class="column-14 w-col w-col-4">
-        <h3 class="heading3-about">Standardization</h3><img src="images/Compliance-Icon.png" width="112" class="images-about">
-        <p class="text-about">- System &amp; platform standards<br>- Guideliness</p>
-      </div>
-      <div class="column-13 w-col w-col-4">
-        <h3 class="heading3-about">Technology Research on Digital Infra</h3><img src="images/services-web-development-services-600x400.png" width="159" class="images-about">
-        <p class="text-about">- Assesment new technology,<br>- Platform Development,<br>- Trial &amp; Testing,<br>- Improvement Operational,<br>- Prototyping Services,<br>- Joint Research</p>
-      </div>
-      <div class="w-col w-col-4">
-        <h3 class="heading3-about">Expertise Help on Digital Infra</h3><img src="images/Expertise-Icon.png" width="105" class="images-about">
-        <p class="text-about">- Master Plan,<br>- Networking Planning,<br>- Consultation,<br>- Assessment Network,<br>- Assessment Security,<br>- Operational Problem Analysis<br>- Technical Support/ BANTEK,<br>- Testing/ PoC,<br>- Product Prototype</p>
-      </div>
-    </div>
-    <div class="row-5 w-row">
-      <div class="column-29 w-col w-col-6">
-        <h3 class="heading3-about">Shared Service for Amoeba</h3><img src="images/shared-services-innovation.png" width="166">
-        <p class="text-about">- System &amp; Platform Standards,<br>- Guideliness,<br>- Network Architectures</p>
-      </div>
-      <div class="column-30 w-col w-col-6">
-        <h3 class="heading3-about">Joint Research</h3><img src="images/5420_-_Merging_Ideas-512.png" width="132">
-        <p class="text-about">- JIC (Joint Innovation Center)<br>- Forum</p>
-      </div>
-    </div>
-  </div>
-  <div id="Content-Section" class="content-home">
-    <div class="container-hero w-container">
-      <h2 id="IRS-SCHEME" class="heading-2 mobile">INFRASTRUCTURE RESEARCH &amp; STANDARIZATION<br>DIVISI DIGITAL SERVICE</h2>
-      <div class="row-11 w-row">
-        <div class="column-28 w-col w-col-4">
-          <div href="user/ixc-page.php" class="content-block coba"><img src="images/images.jpeg" width="138" class="content-image">
-             <h3 href="user/ixc-page.php" class="heading-3">Digital Infrastructure<br>Experience Creation (IXC)</h3>
-            <a href="user/ixc-page.php" class="button-4 atas w-button">Continue Here</a></div>
-        </div>
-        <div class="content-block coba w-col w-col-4"><img src="images/broadband-connection.png" width="205" class="content-image">
-          <h4 class="heading-3">Broadband Access Network<br>Research (BAN)</h4><a href="user/ban-page.php" class="button-4 atas w-button">Continue Here</a></div>
-        <div class="content-block coba w-col w-col-4"><img src="images/iot-759.jpg" width="208" srcset="images/iot-759-p-500.jpeg 500w, images/iot-759.jpg 759w" sizes="(max-width: 479px) 83vw, 208px" class="content-image">
-          <h5 class="heading-3">Infrastructure Service<br>Research (ISR)</h5><a href="user/isr-page.php" class="button-4 atas w-button">Continue Here</a></div>
-      </div>
-      <div class="row-3 w-row">
-        <div class="content-block coba w-col w-col-3"><img src="images/cloud.png" width="129" class="content-image">
-          <h3 class="heading-3">Cloud and Node<br>Platform Research (CNP)</h3><a href="user/cnp-page.php" class="button-4 bawah w-button">Continue Here</a></div>
-        <div class="content-block coba w-col w-col-3"><img src="images/network-web-generic-02.png" width="146" srcset="images/network-web-generic-02-p-500.png 500w, images/network-web-generic-02-p-800.png 800w, ../images/network-web-generic-02-p-1080.png 1080w, images/network-web-generic-02.png 1633w" sizes="(max-width: 479px) 78vw, 146px" class="content-image">
-          <h1 class="heading-3">Mobility and FMC<br>Research (FMC)</h1><a href="user/fmc-page.php" class="button-4 bawah w-button">Continue Here</a></div>
-        <div class="content-block coba w-col w-col-3"><img src="images/iot-systems-integrators.jpg" width="173" class="content-image">
-          <h1 class="heading-3">Broadband Core Network<br>Research (BCN)</h1><a href="user/bcn-page.php" class="button-4 bawah w-button">Continue Here</a></div>
-        <div class="content-block coba w-col w-col-3"><img src="images/it-security.ashx.png" width="181" class="content-image">
-          <h1 class="heading-3">Security, OSS<br>and BSS Research (SOB)</h1><a href="user/sob-page.php" class="button-4 bawah w-button">Continue Here</a></div>
-      </div>
-    </div>
-  </div>
-  <div id="banteK" class="section-15">
-    <div id="bantek" class="container-13 w-container">
-      <h1 class="heading-2 mobile">BANTEK, HASIL RISET IRS &amp; PROTOTYPE</h1>
-      <div>
-        <ul class="w-list-unstyled">
-          <li class="list-item-10"><a href="https://bantek.telkomku.com/@dds/login.php" target="_blank" class="link-block w-inline-block"><img src="images/managed-services-icon.png" width="90" height="90"></a>
-            <ul class="unordered-list-3 w-list-unstyled">
-              <li class="list-item-11"><a href="https://bantek.telkomku.com/@dds/login.php" target="_blank" class="link-15 heading-2 bantek">Technical Support / BANTEK</a></li>
-              <li>
-                <div class="text-block-11">Bantuan Teknis Telkom Divisi Digital Service Bandung</div>
-              </li>
-            </ul>
-          </li>
-          <li class="list-item-10"><a target="_blank" href="user/halaman-view.php" class="link-block-2 w-inline-block"><img src="images/dd6ca5_468f920d53254d1aa047b4ef5bc0f451.png" width="90" height="90"></a>
-            <ul class="unordered-list-3 w-list-unstyled">
-              <li><a href="user/halaman-view.php" class="link-15 heading-2">Hasil Riset I R S</a></li>
-              <li>
-                <div class="text-block-11">Hasil Riset dan Dokumen Standard pada Lab IRS</div>
-              </li>
-            </ul>
-          </li>
-          <li class="list-item-10"><a target="_blank" href="user/halaman-prototype.php" class="link-block-2 w-inline-block"><img src="images/website.jpg" width="90" height="90"></a>
-            <ul class="unordered-list-3 w-list-unstyled">
-              <li><a href="user/halaman-prototype.php" class="link-15 heading-2">Prototype</a></li>
-              <li>
-                <div class="text-block-11">Prototype</div>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-<div id="End-Section" class="end-section all tes">
-    <h3 class="experience">Rate your Experience to Us :</h3>
-    <div class="html-embed w-embed">
-      <div class="rw-ui-container"></div>
-    </div>
-    <div class="row-16 w-row">
-      <div class="column-16 w-col w-col-6"><img src="images/telkom-indonesia-logo-reverse.png" width="117">
-        <h4 class="heading-14">Infrastructure Experience Creation - IXC<br>Divisi Digital Service<br>Jl. Gegerkalong Hilir No. 47<br>Bandung 40152</h4>
-      </div>
-      <div class="column-7 w-col w-col-6"><a href="https://www.facebook.com/TelkomIndonesia/?fref=ts" class="w-inline-block"><img src="images/find-us-on-facebook.png" width="120" srcset="images/find-us-on-facebook-p-500.png 500w, images/find-us-on-facebook.png 720w" sizes="120px" class="image-9"></a><a href="https://twitter.com/TelkomIndonesia?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="w-inline-block"><img src="images/twitterlogo.png" width="120" srcset="images/twitterlogo-p-500.png 500w, images/twitterlogo-p-800.png 800w, images/twitterlogo.png 1000w" sizes="120px" class="image-10"></a><a href="https://www.youtube.com/telkomindonesiaofficial" target="_blank" class="w-inline-block"><img src="images/logo-youtube.png" width="100" class="image-11"></a></div>
-    </div>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="js/webflow.js" type="text/javascript"></script>
-  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
-
-
-
-
-  <!-- survey -->
-<!-- <script>(function(t,e,s,o){var n,a,c;t.SMCX=t.SMCX||[],e.getElementById(o)||(n=e.getElementsByTagName(s),a=n[n.length-1],c=e.createElement(s),c.type="text/javascript",c.async=!0,c.id=o,c.src=["https:"===location.protocol?"https://":"http://","widget.surveymonkey.com/collect/website/js/tRaiETqnLgj758hTBazgdxwTcbR4_2FVM_2F7oMv0qXxJV9kRs5JITHBYeJs7_2B9IJn1y.js"].join(""),a.parentNode.insertBefore(c,a))})(window,document,"script","smcx-sdk");
-</script> -->
-
-
-
-</body>
-</html>
+    }
+</script>
