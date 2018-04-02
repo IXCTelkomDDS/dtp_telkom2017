@@ -1,7 +1,9 @@
 <?php
   $host = 'localhost';
-  $username = 'admindtp';
-  $password = '4dminDtp';
+  //$username = 'id4115751_haerdiansyah90';
+  //$password = 'Ardi2290';
+  $username = 'root';
+  $password = "";
   $connect = mysqli_connect($host, $username, $password);
   // if($connect) echo 'Connected'; //true
   //  else 'Not Connected Yet'; //false
