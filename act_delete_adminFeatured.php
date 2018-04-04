@@ -5,18 +5,18 @@
 include "koneksi_db.php";
 
    if($_GET) {
-     $query = "DELETE FROM user_pic WHERE id_pic = '$_GET[id]'";
-     $delete = mysqli_query($connect, $query);
+     $query4 = "DELETE FROM upload_dtp WHERE ID_UPLOAD = '$_GET[id]'";
+     $delete4 = mysqli_query($connect, $query4);
 
-      	if($delete) { ?>
+        if($delete4) { ?>
             <script>
                 alert('Delete Successful');
-                location.href='admin/user-pic.php';
+                location.href='admin/faetured.php';
             </script>
         <?php } else { ?>
             <script>
                 alert('Delete Failed');
-                location.href='admin/user-pic.php';
+                location.href='admin/featured.php';
             </script>
         <?php } ?>
 

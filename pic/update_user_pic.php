@@ -16,12 +16,12 @@
 
 	if(isset($_POST['Update'])) {
 
-      $id_pic   = $_POST['id_pic'];
+      $id_pic       = $_POST['id_pic'];
       $name_pic     = $_POST['name_pic'];
       $username     = $_POST['username'];
       $password     = $_POST['password'];
-      $phone      = $_POST['phone'];
-      $email      = $_POST['email'];
+      $phone        = $_POST['phone'];
+      $email        = $_POST['email'];
       $lab_pic      = $_POST['lab_pic'];
       $user_type    = $_POST['user_type'];
 
@@ -185,7 +185,7 @@
 					</div>
 					
 					<div class="p-t-10 p-b-9">
-						<span class="txt1" style="font-weight: bold; font-size: 14px;">Lab P.I.C</span>
+						<span class="txt1" style="font-weight: bold; font-size: 14px;">P.I.C Lab</span>
 					</div>
 					<div class="wrap-input100 validate-input">
 						<input readonly="" class="input100" style="height: 30px; font-size: 14px;" type="text" name="lab_pic" id="lab_pic" value="<?php echo $data['lab_pic'];?>" required="">

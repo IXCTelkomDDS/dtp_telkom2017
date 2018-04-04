@@ -19,10 +19,15 @@
 			$(document).ready(function(){
     		$("#file_info").css("display","none"); //Menghilangkan file_info2 ketika pertama kali dijalankan
         		$(".detail").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() != "Prototype") { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Kajian") { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
             			$("#file_info").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
         			} else {
             			$("#file_info").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
+        			}
+        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Dokumen Standar") { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+            			$("#file_info3").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
+        			} else {
+            			$("#file_info3").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
         			}
 					if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Prototype" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
             			$("#file_info2").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
@@ -54,10 +59,15 @@
 			$(document).ready(function(){
     		$("#upload").css("display","none"); //Menghilangkan tombol upload ketika pertama kali dijalankan
         		$(".detail").click(function(){ //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() != "Prototype" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Kajian" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
             			$("#upload").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
         			} else {
             			$("#upload").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
+        			}
+        			if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Dokumen Standar" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
+            			$("#upload3").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
+        			} else {
+            			$("#upload3").slideUp("fast");  //Efek Slide Up (Menghilangkan file_info2)
         			}
 					if ($("input[name='JENIS_FILE_UPLOAD']:checked").val() == "Prototype" ) { //Jika radio button selain "Prototype" dipilih maka tampilkan file_info2
             			$("#upload2").slideDown("fast"); //Efek Slide Down (Menampilkan file_info2)
@@ -100,7 +110,7 @@
 				<!-- Form Upload -->
 			<div class="wrap-login100 p-l-100 p-r-100 p-t-10 p-b-10" style="background-color: #D3D3D3;">
 
-				<form class="login100-form validate-form flex-sb flex-w" role="form" method="post" enctype="multipart/form-data" action="../act_upload.php">
+				<form class="login100-form validate-form flex-sb flex-w" role="form" method="post" enctype="multipart/form-data" action="../act_upload_adminSubmission.php">
 
 					<div class="p-t-10 p-b-9">
 						<span class="txt1" style="font-weight: bold; font-size: 14px;">P.I.C</span>
@@ -139,7 +149,16 @@
 						<span class="txt1" style="font-weight: bold; font-size: 14px;">Lab</span>
 					</div>
 					<div class="wrap-input100 validate-input">
-						<input readonly="" class="input100" style="height: 30px; font-size: 14px; width: 458px;" type="text" name="JENIS_LAB_UPLOAD" id="JENIS_LAB_UPLOAD" value="<?php echo $_SESSION['lab_pic'];?>" required="">
+						<select name="JENIS_LAB_UPLOAD" required="" class="input100" style="height: 30px; font-size: 14px; width: 458px; border-color: transparent;">
+								<option value="">-- Choose the Lab --</option>
+								<option value="IXC">IXC Lab</option>
+								<option value="BAN">BAN Lab</option>
+								<option value="BCN">BCN Lab</option>
+								<option value="CNP">CNP Lab</option>
+								<option value="FMC">FMC Lab</option>
+								<option value="ISR">ISR Lab</option>
+								<option value="SOB">SOB Lab</option>
+							</select>
 						<span class="focus-input100"></span>
 					</div>
 
@@ -159,6 +178,14 @@
 					</div>
 				</div>
 
+				<div id="file_info3" style="display:none; padding-top: 16px;" class="p-t-10 p-b-9">
+					<span class="txt1" style="font-weight: bold; font-size: 14px; padding-right: 430px;">File</span>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" style="height: 30px; width: 460px; font-size: 14px; padding-top: 4px;" type="file" name="NAMA_FILE_UPLOAD" id="File">
+						<span class="focus-input100"></span>
+					</div>
+				</div>
+
 				<div id="file_info2" style="display:none; padding-top: 16px;" class="p-t-10 p-b-9">
 					<span class="txt1" style="font-weight: bold; font-size: 14px; padding-right: 430px;">URL</span>
 					<div class="wrap-input100 validate-input">
@@ -169,6 +196,10 @@
 
 					<div id="upload" style="display: none; padding-top: 10px; padding-bottom: 20px;" class="container-login100-form-btn m-t-17">
 						<button class="btn btn-primary btn-lg btn-block" type="submit" value="Upload File" name="Submit" style="font-weight: bold; height: 40px;"> Upload File </button>
+					</div>
+
+					<div id="upload3" style="display: none; padding-top: 10px; padding-bottom: 20px;" class="container-login100-form-btn m-t-17">
+						<button class="btn btn-primary btn-lg btn-block" type="submit" value="Upload File" name="Submit3" style="font-weight: bold; height: 40px;"> Upload File </button>
 					</div>
 
 					<div id="upload2" style="display: none; padding-top: 10px; padding-bottom: 20px;" class="container-login100-form-btn m-t-17">

@@ -2,32 +2,35 @@
  
 <?php
 
-  include "../koneksi_db.php";
+	session_start();
 
+  include "../koneksi_db.php";
 
 	  //query update user_pic
 	if(isset($_POST['SignUp'])) {
 
+      $name         = $_POST['name'];
       $username     = $_POST['username'];
       $password     = $_POST['password'];
       $name_pic 	= $_POST['name_pic'];
       $phone    	= $_POST['phone'];
       $email	    = $_POST['email'];
+      $lab_pic	    = $_POST['lab_pic'];
       $user_type    = $_POST['user_type'];
    
-	    $sql = "INSERT INTO user_pic (id_pic, username, password, name_pic, phone, email, user_type) VALUES (null, '$username', '$password', '$name_pic', '$phone', '$email', '$user_type')";
+	    $sql = "INSERT INTO user_pic (id_pic, name, username, password, name_pic, phone, email, lab_pic, user_type) VALUES (null, '$name', '$username', '$password', '$name_pic', '$phone', '$email', '$lab_pic', '$user_type')";
         $query = mysqli_query($connect, $sql);
 		
         if($query) { ?>
           <script>
             alert('Add Successful');
-            location.href='index.php';
+            location.href='home_admin.php';
           </script>
 
         <?php } else { ?>
           <script>
             alert('Add Failed');
-            location.href='signup-admin.php';
+            location.href='signup.php';
           </script>
 
       <?php } ?>    
@@ -81,7 +84,7 @@
 	<div id="wrapper">
 		<div class="vertical-align-wrap" style="margin-top: 20px; margin-bottom: 20px;">
 			<div class="vertical-align-middle">
-				<div class="auth-box" style="width: 500px; height: 700px;">
+				<div class="auth-box" style="width: 500px; height: 900px;">
 					<div class="left" style="width: 500px;">
 						<div class="content" style="padding-bottom: 30px;">
 								<p class="lead" style="font-weight: bold; font-size: 30px; margin-top: 30px;">Sign Up to your account</p>
@@ -89,6 +92,11 @@
 								<br>
 
 							<form class="form-auth-small" role="form" method="post" enctype="multipart/form-data" action="">
+
+								<div class="form-group">
+									<label class="control-label" style="margin-right: 500px;">Admin</label>
+									<input readonly="" type="text" class="form-control" required="" name="name" value="<?php echo $_SESSION['username'];?>">
+								</div>
 
 								<div class="form-group">
 									<label class="control-label" style="margin-right: 500px;">Name</label>
@@ -116,8 +124,26 @@
 								</div>
 
 								<div class="form-group">
+									<label class="control-label" style="margin-right: 370px;">P.I.C Lab</label>
+									<select name="lab_pic" required="" class="form-control">
+										<option value="">-- Choose the Lab --</option>
+										<option value="IXC">IXC Lab</option>
+										<option value="BAN">BAN Lab</option>
+										<option value="BCN">BCN Lab</option>
+										<option value="CNP">CNP Lab</option>
+										<option value="FMC">FMC Lab</option>
+										<option value="ISR">ISR Lab</option>
+										<option value="SOB">SOB Lab</option>
+									</select>
+								</div>
+
+								<div class="form-group">
 									<label class="control-label" style="margin-right: 370px;">Usertype</label>
-									<input type="text" readonly="" class="form-control" required="" name="user_type" value="Admin DTP">
+									<select name="user_type" required="" class="form-control">
+										<option value="">-- Choose the usertype --</option>
+										<option value="User P.I.C">User P.I.C</option>
+										<option value="Manager P.I.C">Manager P.I.C</option>
+									</select>
 								</div>
 
 								<button type="submit" name="SignUp" value="Sign Up" class="btn btn-primary btn-lg btn-block" style="font-weight: bold; font-size: 18px;">SIGNUP</button>

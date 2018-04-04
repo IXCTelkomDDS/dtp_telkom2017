@@ -176,7 +176,7 @@
 				<!-- Form Upload -->
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-10 p-b-10" style="background-color: #D3D3D3;">
 
-				<form class="login100-form validate-form flex-sb flex-w" role="form" method="post" enctype="multipart/form-data" action="../act_upload.php">
+				<form class="login100-form validate-form flex-sb flex-w" role="form" method="post" enctype="multipart/form-data" action="../act_upload_picSubmission.php">
 
 					<div class="p-t-10 p-b-9">
 						<span class="txt1" style="font-weight: bold; font-size: 14px;">P.I.C</span>

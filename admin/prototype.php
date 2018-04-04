@@ -14,12 +14,12 @@
 		//if search found
 		$keyword = $_REQUEST['keyword'];
 		$reload = "prototype.php?pagination=true&keyword=$keyword";
-		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' AND JENIS_LAB_UPLOAD LIKE '%$keyword%' || JENIS_FILE_UPLOAD LIKE '%$keyword%' || JUDUL_UPLOAD LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' || URL LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, UNGGULAN, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' AND JENIS_LAB_UPLOAD LIKE '%$keyword%' || JENIS_FILE_UPLOAD LIKE '%$keyword%' || JUDUL_UPLOAD LIKE '%$keyword%' || UNGGULAN LIKE '%$keyword%' || DESKRIPSI_UPLOAD LIKE '%$keyword%' || URL LIKE '%$keyword%' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	} else {
 		//if search not found
 		$reload = "prototype.php?pagination=true";
-		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' ORDER BY ID_UPLOAD ASC";
+		$sql = "SELECT ID_UPLOAD, TGL_UPLOAD, JUDUL_UPLOAD, JENIS_FILE_UPLOAD, UNGGULAN, JENIS_LAB_UPLOAD, DESKRIPSI_UPLOAD, URL FROM upload_dtp WHERE JENIS_FILE_UPLOAD = 'Prototype' ORDER BY ID_UPLOAD ASC";
 		$result = mysqli_query($connect, $sql);
 	}
 
@@ -98,7 +98,16 @@
 										<tbody style="font-size: 16px;">
 											<tr>
 												<td><?php echo ++$no_urut;?></td>
+
+												<?php if ($data['UNGGULAN'] == 'Unggulan') { ?>
+
+												<td><?php echo $data['JUDUL_UPLOAD']?> (<?php echo $data['UNGGULAN']?>) </td>
+
+												<?php } else if ($data['UNGGULAN'] != 'Unggulan') { ?>
+
 												<td><?php echo $data['JUDUL_UPLOAD']?></td>
+
+												<?php } ?>
 
 											<!--menampilkan hanya tgl dari datetime-->
 												<?php
@@ -113,7 +122,7 @@
 
 							<td> <a class="btn btn-primary" onclick="return konfirmasi2();" href="update.php?id=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Update</a>
 		      					&nbsp;
-			      				<a class="btn btn-primary" onclick="return konfirmasi();" href="act_delete3.php?id3=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Delete</a>
+			      				<a class="btn btn-primary" onclick="return konfirmasi();" href="../act_delete_adminPrototype.php?id=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Delete</a>
 			    			</td>
 
 					    	<!-- End Action-->

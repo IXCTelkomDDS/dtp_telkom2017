@@ -117,23 +117,23 @@
 								</div>
 
 								<div class="form-group">
-									<label class="control-label" style="margin-right: 370px;">Lab P.I.C</label>
+									<label class="control-label" style="margin-right: 370px;">P.I.C Lab</label>
 									<select name="lab_pic" required="" class="form-control">
-										<option value="">-- Pilih Lab --</option>
-										<option value="IXC">Lab IXC</option>
-										<option value="BAN">Lab BAN</option>
-										<option value="BCN">Lab BCN</option>
-										<option value="CNP">Lab CNP</option>
-										<option value="FMC">Lab FMC</option>
-										<option value="ISR">Lab ISR</option>
-										<option value="SOB">Lab SOB</option>
+										<option value="">-- Choose the Lab --</option>
+										<option value="IXC">IXC Lab</option>
+										<option value="BAN">BAN Lab</option>
+										<option value="BCN">BCN Lab</option>
+										<option value="CNP">CNP Lab</option>
+										<option value="FMC">FMC Lab</option>
+										<option value="ISR">ISR Lab</option>
+										<option value="SOB">SOB Lab</option>
 									</select>
 								</div>
 
 								<div class="form-group">
 									<label class="control-label" style="margin-right: 370px;">Usertype</label>
 									<select name="user_type" required="" class="form-control">
-										<option value="">-- Pilih Usertype --</option>
+										<option value="">-- Choose the usertype --</option>
 										<option value="User P.I.C">User P.I.C</option>
 										<option value="Manager P.I.C">Manager P.I.C</option>
 									</select>

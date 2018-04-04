@@ -167,7 +167,7 @@
 
 							<td> <a class="btn btn-primary" onclick="return konfirmasi2();" href="update.php?id=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Update</a>
 		      					&nbsp;
-			      				<a class="btn btn-primary" onclick="return konfirmasi();" href="act_delete3.php?id=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Delete</a>
+			      				<a class="btn btn-primary" onclick="return konfirmasi();" href="../act_delete_adminStandardization.php?id=<?php echo $data['ID_UPLOAD'];?>" style="font-weight: bold;">Delete</a>
 			    			</td>
 
 					    	<!-- End Action-->

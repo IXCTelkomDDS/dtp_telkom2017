@@ -81,7 +81,7 @@
 	<div id="wrapper">
 		<div class="vertical-align-wrap" style="margin-top: 20px; margin-bottom: 20px;">
 			<div class="vertical-align-middle">
-				<div class="auth-box" style="width: 500px; height: 700px;">
+				<div class="auth-box" style="width: 500px; height: 730px;">
 					<div class="left" style="width: 500px;">
 						<div class="content" style="padding-bottom: 30px;">
 								<p class="lead" style="font-weight: bold; font-size: 30px; margin-top: 30px;">Sign Up to your account</p>

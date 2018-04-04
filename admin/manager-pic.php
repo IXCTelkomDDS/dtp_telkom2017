@@ -6,7 +6,7 @@
 
 	include "../header-admin.php";
 	include "../koneksi_db.php";
-	include "../check_session.php";
+	include "../check_session_admin.php";
 
 	$no = 1;
 	$sql = "SELECT * FROM user_pic WHERE user_type = 'Manager P.I.C' ORDER BY id_pic ASC";

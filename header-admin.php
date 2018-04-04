@@ -23,10 +23,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 	<!-- VENDOR CSS -->
-	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="vendor/linearicons/style.css">
-	<link rel="stylesheet" href="vendor/chartist/css/chartist-custom.css">
+	<link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../vendor/linearicons/style.css">
+	<link rel="stylesheet" href="../vendor/chartist/css/chartist-custom.css">
 
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="css/main.css">
@@ -38,13 +38,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 
 	<!-- ICONS -->
-	<link rel="icon" type="image/png" sizes="96x96" href="images/DDS-telkom.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="../images/DDS-telkom.png">
 
 	<!-- bootstrap pagination -->
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-
-    <!-- Pop up css --> 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -65,49 +62,6 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><?php echo $_SESSION['username'];?></span><i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="" data-toggle="modal" data-target="#myModal3" onclick="showDetails3(this);"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-
-
-						<!-- displaying pop up that will show details -->
-						<!-- modal -->
-						<div class="modal fade" id="myModal3" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
-						    <div class="modal-dialog">
-						        <div class="modal-content">
-						            <div class="modal-header">
-						                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						                <h4 class="modal-title" id="myModalLabel3">Profile of User P.I.C</h4>
-						            </div>
-
-								<div class="modal-body">
-								    <!-- display data in pop up -->
-
-								    <?php while($data_pic = mysqli_fetch_array($result_pic)) { ?>
-
-								    <?php if($data_pic['username'] == $_SESSION['username']) { ?>
-
-								    <br>
-
-								    <p align="center">Name       : <?php echo $data_pic['name_pic'];?></p>
-								    <p align="center">Phone      : <?php echo $data_pic['phone'];?></p>
-								    <p align="center">Email      : <?php echo $data_pic['email'];?></p>
-								    <p align="center">Lab P.I.C  : <?php echo $data_pic['lab_pic'];?></p>	
-
-								    <br>
-
-								    <div class="text-center"><a href="update_user.php?id=<?php echo $data_pic['id_pic'];?>" class="btn btn-primary">Edit Profile</a></div>
-
-								    <?php } ?>
-
-								    <?php } ?>
-
-						        </div>
-
-						   		</div>
-						    </div>
-						</div>
-						<!-- End Modal -->
-
-
 								<li><a href="index.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
@@ -140,13 +94,7 @@
 								<ul class="nav">
 									<li><a href="review.php" class="">Review</a></li>
 									<li><a href="standardization.php" class="">Doc. Standardization</a></li>
-									<li><a href="#subPages3" data-toggle="collapse" class="collapsed"> <span>Prototype</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-										<div id="subPages3" class="collapse ">
-										<ul class="nav">
-											<li><a href="prototype.php" class="">Prototype</a></li>
-											<li><a href="featured.php" class="">Featured</a></li>
-										</ul>
-									</li>
+									<li><a href="prototype.php" class="">Prototype</a></li>
 								</ul>
 							</div>
 						</li>
@@ -158,15 +106,3 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
-
-
-
-<!-- pop up details -->
-<script type="text/javascript">
-    function showDetails3(button) {
-        $.ajax({
-            success: function(response) {
-            }
-        });
-    }
-</script>

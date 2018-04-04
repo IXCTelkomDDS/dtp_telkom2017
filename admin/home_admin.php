@@ -6,6 +6,7 @@
 
 	include "../header-admin.php";
 	include "../koneksi_db.php";
+	include "../check_session_admin.php";
 
 ?>
 

@@ -20,47 +20,16 @@
       $password     = $_POST['password'];
       $phone        = $_POST['phone'];
       $email        = $_POST['email'];
-      $lab_pic      = $_POST['lab_pic'];
       $user_type    = $_POST['user_type'];
 
         //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
-        $sql2 = "UPDATE user_pic SET name_pic = '$name_pic', username = '$username', password = '$password', phone = '$phone', email = '$email', lab_pic = '$lab_pic', user_type = '$user_type' WHERE id_pic = '$id_pic'";
+        $sql2 = "UPDATE user_pic SET name_pic = '$name_pic', username = '$username', password = '$password', phone = '$phone', email = '$email', user_type = '$user_type' WHERE id_pic = '$id_pic'";
         $query2 = mysqli_query($connect, $sql2);
   
         if($query2) { ?>
           <script>
             alert('Update Successful');
-            location.href='user-pic.php';
-          </script>
-
-        <?php } else { ?>
-          <script>
-            alert('Update Failed');
-            location.href='update_user.php';
-          </script>
-
-        <?php } ?>
-
-    <?php } else if(isset($_POST['Update2'])) {
-
-      $id_pic       = $_POST['id_pic'];
-      $name         = $_POST['name'];
-      $name_pic     = $_POST['name_pic'];
-      $username     = $_POST['username'];
-      $password     = $_POST['password'];
-      $phone        = $_POST['phone'];
-      $email        = $_POST['email'];
-      $lab_pic      = $_POST['lab_pic'];
-      $user_type    = $_POST['user_type'];
-
-        //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
-        $sql3 = "UPDATE user_pic SET name = '$name', name_pic = '$name_pic', username = '$username', password = '$password', phone = '$phone', email = '$email', lab_pic = '$lab_pic', user_type = '$user_type' WHERE id_pic = '$id_pic'";
-        $query3 = mysqli_query($connect, $sql3);
-  
-        if($query3) { ?>
-          <script>
-            alert('Update Successful');
-            location.href='manager-pic.php';
+            location.href='home_admin.php';
           </script>
 
         <?php } else { ?>
@@ -113,7 +82,7 @@
 		<div class="vertical-align-wrap" style="margin-top: 20px; margin-bottom: 20px;">
 			<div class="vertical-align-middle">
 
-				<div class="auth-box" style="width: 500px; height: 780px;">
+				<div class="auth-box" style="width: 500px; height: 700px;">
 					<div class="left" style="width: 500px;">
 						<div class="content" style="padding-bottom: 30px;">
 								<p class="lead" style="font-weight: bold; font-size: 30px; margin-top: 30px;">Edit User</p>
@@ -148,27 +117,13 @@
 									<input type="text" class="form-control" required="" name="email" value="<?php echo $data['email'];?>">
 								</div>
 								<div class="form-group">
-									<label class="control-label" style="margin-right: 370px;">P.I.C Lab</label>
-									<input type="text" readonly="" class="form-control" required="" name="lab_pic" value="<?php echo $data['lab_pic'];?>">
-								</div>
-								<div class="form-group">
 									<label class="control-label" style="margin-right: 370px;">Usertype</label>
 									<input type="text" readonly="" class="form-control" required="" name="user_type" value="<?php echo $data['user_type'];?>">
 								</div>
 
-								<?php if($data['user_type'] == 'User P.I.C') { ?>
-
 								<div style="padding-top: 10px; padding-bottom: 20px;" class="container-login100-form-btn m-t-17">
 									<button class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" name="Update" style="font-weight: bold; height: 40px;"> EDIT </button>
 								</div>
-
-								<?php } else if ($data['user_type'] == 'Manager P.I.C') { ?>
-
-								<div style="padding-top: 10px; padding-bottom: 20px;" class="container-login100-form-btn m-t-17">
-									<button class="btn btn-primary btn-lg btn-block" type="submit" value="Submit" name="Update2" style="font-weight: bold; height: 40px;"> EDIT </button>
-								</div>
-
-								<?php } ?>
 
 								<input type="hidden" name="id_pic" value="<?php echo $data['id_pic'];?>">
 

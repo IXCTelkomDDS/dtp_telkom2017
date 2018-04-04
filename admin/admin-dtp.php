@@ -6,7 +6,7 @@
 
 	include "../header-admin.php";
 	include "../koneksi_db.php";
-	//include "../check_session.php";
+	include "../check_session_admin.php";
 
 	$no = 1;
 	$sql = "SELECT * FROM user_pic WHERE user_type = 'Admin DTP' ORDER BY id_pic ASC";
@@ -59,7 +59,7 @@
 												<td><?php echo $data['name_pic']?></td>
 												<td><?php echo $data['phone']?></td>
 												<td><?php echo $data['email']?></td>
-												<td> <a class="btn btn-primary" onclick="return konfirmasi2();" href="update_user.php?id=<?php echo $data['id_pic'];?>" style="font-weight: bold;">Update</a>
+												<td> <a class="btn btn-primary" onclick="return konfirmasi2();" href="update_admin.php?id=<?php echo $data['id_pic'];?>" style="font-weight: bold;">Update</a>
 								      					&nbsp;
 								      				<a class="btn btn-primary" onclick="return konfirmasi();" href="act_delete_user.php?id=<?php echo $data['id_pic'];?>" style="font-weight: bold;">Delete</a>
 								    			</td>

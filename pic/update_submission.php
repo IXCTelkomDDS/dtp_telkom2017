@@ -133,10 +133,10 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" style="height: 30px; font-size: 15px; padding-right: 100px; background-color: #D3D3D3; border-color: #D3D3D3;">
-						<input type="radio" name="JENIS_FILE_UPLOAD" value="Kajian" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Kajian'?'checked="checked"':'';?>> Kajian &nbsp; &nbsp; &nbsp;
-						<input type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Dokumen Standar'?'checked="checked"':'';?>> Dokumen Standar
+						<input readonly="readonly" type="radio" name="JENIS_FILE_UPLOAD" value="Kajian" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Kajian'?'checked="checked"':'';?>> Kajian &nbsp; &nbsp; &nbsp;
+						<input readonly="readonly" type="radio" name="JENIS_FILE_UPLOAD" value="Dokumen Standar" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Dokumen Standar'?'checked="checked"':'';?>> Dokumen Standar
 						&nbsp; &nbsp; &nbsp;
-						<input type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Prototype'?'checked="checked"':'';?>> Prototype
+						<input readonly="readonly" type="radio" name="JENIS_FILE_UPLOAD" value="Prototype" class="detail" required="" <?php echo $data['JENIS_FILE_UPLOAD']=='Prototype'?'checked="checked"':'';?>> Prototype
 						<span class="focus-input100"></span>
 					</div>
 
@@ -226,3 +226,12 @@
 <?php
 	include "../footer-pic.php";
 ?>
+
+
+<style type="text/css">
+	/*$(':radio,:checkbox').click(function(){
+	    return false;
+	});*/
+
+	$(':radio[readonly]:not(:checked)').attr('disabled', true);
+</style>

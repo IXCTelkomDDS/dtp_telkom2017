@@ -4,7 +4,7 @@
 
 include "koneksi_db.php";
 
-    if($_GET) {
+   if($_GET) {
      $query3 = "DELETE FROM upload_dtp WHERE ID_UPLOAD = '$_GET[id]'";
      $delete3 = mysqli_query($connect, $query3);
 
