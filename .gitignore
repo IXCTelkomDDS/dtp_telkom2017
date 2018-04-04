@@ -20,7 +20,7 @@ application/logs/*
 !application/logs/.htaccess
 vendor
 /uploads/
-*/koneksi_db.php/*
+!*/koneksi_db.php
 
 ### CodeIgniter Patch ###
 #codeigniter 3
