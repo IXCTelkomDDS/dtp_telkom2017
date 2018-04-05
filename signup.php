@@ -1,24 +1,31 @@
 <?php error_reporting(0) // tambahkan untuk menghilangkan notice ?>
- 
+
 <?php
 
-  include "koneksi_db.php";
-
-
-	  //query update user_pic
-	if(isset($_POST['SignUp'])) {
+     include "koneksi_db.php";
 
       $username     = $_POST['username'];
       $password     = $_POST['password'];
-      $name_pic 	= $_POST['name_pic'];
-      $phone    	= $_POST['phone'];
-      $email	    = $_POST['email'];
+      //$MD5          = md5[$password]; //merubah variabel $ubah ke MD5
       $lab_pic      = $_POST['lab_pic'];
-      $user_type    = $_POST['user_type'];
-   
-	    $sql = "INSERT INTO user_pic (id_pic, username, password, name_pic, phone, email, lab_pic, user_type) VALUES (null, '$username', '$password', '$name_pic', '$phone', '$email', '$lab_pic', '$user_type')";
+      $user_type    = 'User P.I.C';
+
+      //script validasi data
+ 
+    /*$cek = "SELECT * FROM user_pic WHERE username = '$username' || password = '$password' || lab_pic = '$lab_pic'";
+    $cek2 = mysqli_query($connect, $cek);
+    $cek3 = mysqli_num_rows($cek2);
+    
+    if ($cek3 > 1) {
+        echo "<script>window.alert('Username atau Password atau Lab yang Anda masukan sudah ada')
+          window.location='signup.php'</script>";
+    } else */
+
+    if(isset($_POST['SignUp'])) {
+        //pemeriksaan input selesai, bila benar langsung jalankan perintah selanjutnya
+        $sql = "INSERT INTO user_pic (id_pic, username, password, lab_pic, user_type) VALUES (null, '$username', '$password', '$lab_pic', '$user_type')";
         $query = mysqli_query($connect, $sql);
-		
+  
         if($query) { ?>
           <script>
             alert('Add Successful');
@@ -33,123 +40,112 @@
 
       <?php } ?>    
 
-  <?php } 
+  <?php }
 
 ?>
 
-<!doctype html>
-<html lang="en" class="fullscreen-bg">
+<!DOCTYPE html>
+<html data-wf-page="59fd0c1ae534be0001f52c87" data-wf-site="59fd0c1ae534be0001f52c86">
 
 <head>
+  
+  <title>Sign Up User P.I.C</title>
 
-	<title>Sign Up</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!-- Favicon -->
-		<link rel="shortcut icon" href="images/DDS-telkom.png">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="css/util.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 
-		<!-- Web Fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-		<link href="http://fonts.googleapis.com/css?family=Raleway:700,400,300" rel="stylesheet" type="text/css">
-
-		<!-- Bootstrap core CSS -->
-		<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
-		<!-- Font Awesome CSS -->
-		<link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
-
-		<!-- Table CSS -->
-		<link href="css/table.css" rel="stylesheet">
-
-		<!-- Plugins -->
-		<link href="css/animations.css" rel="stylesheet">
-
-		<!-- Worthy core CSS file -->
-		<link href="css/style.css" rel="stylesheet">
-
-		<!-- Custom css --> 
-		<link href="css/custom.css" rel="stylesheet">
-
-		<!-- Pop up css --> 
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-		<!-- Custom css --> 
-		<link href="css/main_login.css" rel="stylesheet">
-	
 </head>
-
 <body>
-	<!-- WRAPPER -->
-	<div id="wrapper">
-		<div class="vertical-align-wrap" style="margin-top: 20px; margin-bottom: 20px;">
-			<div class="vertical-align-middle">
-				<div class="auth-box" style="width: 500px; height: 800px;">
-					<div class="left" style="width: 500px;">
-						<div class="content" style="padding-bottom: 30px;">
-								<p class="lead" style="font-weight: bold; font-size: 30px; margin-top: 30px;">Sign Up to your account</p>
+  
+  <div class="limiter">
+    <div class="container-login100" style="background-image: url(images/logo-login.jpg);">
+      <div class="wrap-login100">
 
-								<br>
+        <div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+          <span class="login100-form-title-1">
+            Form Sign Up Responsible of P.I.C
+          </span>
+        </div>
 
-							<form class="form-auth-small" role="form" method="post" enctype="multipart/form-data" action="">
+        <form class="login100-form validate-form" role="form" method="post" enctype="multipart/form-data" action="">
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 500px;">Name</label>
-									<input type="text" class="form-control" required="" name="name_pic" placeholder="Your Name">
-								</div>
+          <div class="wrap-input100 validate-input m-b-26">
+            <span class="label-input100">Username</span>
+            <input class="input100" type="text" name="username" placeholder="Enter Username" required="">
+            <span class="focus-input100"></span>
+          </div>
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 500px;">Username</label>
-									<input type="text" class="form-control" required="" name="username" placeholder="Username">
-								</div>
+          <div class="wrap-input100 validate-input m-b-18">
+            <span class="label-input100">Password</span>
+            <input class="input100" type="password" name="password" placeholder="Enter Password" required="">
+            <span class="focus-input100"></span>
+          </div>
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 500px;">Password</label>
-									<input type="password" class="form-control" required="" name="password" placeholder="Password">
-								</div>
+          <div class="wrap-select validate-input m-b-18">
+          	<span class="label-input100">Lab</span>
+				<select name="lab_pic" required="" class="text-field w-select">
+					<option value="">-- Pilih Lab --</option>
+					<option value="IXC">Lab IXC</option>
+					<option value="BAN">Lab BAN</option>
+					<option value="BCN">Lab BCN</option>
+					<option value="CNP">Lab CNP</option>
+					<option value="FMC">Lab FMC</option>
+					<option value="ISR">Lab ISR</option>
+					<option value="SOB">Lab SOB</option>
+				</select>
+			</span>
+		  </div>
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 500px;">Phone</label>
-									<input type="text" class="form-control" required="" name="phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57' placeholder="Your Phone">
-								</div>
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" type="submit" value="Sign Up" name="SignUp">
+              Sign Up
+            </button>
+          </div>
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 500px;">Email</label>
-									<input type="text" class="form-control" required="" name="email" placeholder="example@gmail.com">
-								</div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!--===============================================================================================-->
+  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/bootstrap/js/popper.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/daterangepicker/moment.min.js"></script>
+  <script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+  <script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+  <script src="js/main.js"></script>
 
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 370px;">P.I.C Lab</label>
-									<select name="lab_pic" required="" class="form-control">
-										<option value="">-- Choose the Lab --</option>
-										<option value="IXC">IXC Lab</option>
-										<option value="BAN">BAN Lab</option>
-										<option value="BCN">BCN Lab</option>
-										<option value="CNP">CNP Lab</option>
-										<option value="FMC">FMC Lab</option>
-										<option value="ISR">ISR Lab</option>
-										<option value="SOB">SOB Lab</option>
-									</select>
-								</div>
-
-								<div class="form-group">
-									<label class="control-label" style="margin-right: 370px;">Usertype</label>
-									<select name="user_type" required="" class="form-control">
-										<option value="">-- Choose the usertype --</option>
-										<option value="User P.I.C">User P.I.C</option>
-										<option value="Manager P.I.C">Manager P.I.C</option>
-									</select>
-								</div>
-
-								<button type="submit" name="SignUp" value="Sign Up" class="btn btn-primary btn-lg btn-block" style="font-weight: bold; font-size: 18px;">SIGNUP</button>
-
-							</form>
-
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END WRAPPER -->
 </body>
-
 </html>

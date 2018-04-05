@@ -18,9 +18,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
-/vendor/
-/uploads/
-!*/koneksi_db.php
+vendor
+uploads
+koneksi_db.php.
 
 ### CodeIgniter Patch ###
 #codeigniter 3
